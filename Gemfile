@@ -3,8 +3,44 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'devise'
+gem 'simple_form'
+gem 'country_select'
+gem 'friendly_id', '~> 5.0.0'
+gem 'rack-zippy'
+gem 'invisible_captcha'
+gem 'bootstrap-validator-rails'
+# gem 'stripe'
+# gem 'will_paginate', '~> 3.0'
+# gem 'acts-as-taggable-on'
+# gem 'impressionist'
+gem 'gibbon', '~> 1.1.3'
+gem 'ckeditor_rails', :git => 'https://github.com/tsechingho/ckeditor-rails'
+# gem 'carrierwave'
+# gem 'cloudinary'
+gem 'sitemap_generator'
+# gem 'whenever', :require => false
+
+# Delayed jobs
+gem 'sucker_punch', '~> 1.0'
+# gem 'exception_notification'
+# gem 'newrelic_rpm'
+# gem "html_truncator", "~>0.2"
+gem "browser"
+gem 'jquery-turbolinks'
+gem 'utf8-cleaner'
+group :development do
+  gem "better_errors"
+  gem 'quiet_assets'
+  # gem 'seed_dump'
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'rails_12factor'
+  gem 'pg'
+  gem "passenger"
+end
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets

@@ -1,0 +1,10 @@
+<% @page_title = 'Your Shopping Bag' %>
+<div class="checkout">
+  <h2>Your items</h2>
+  <p class="intro">
+    Here are the items you have selected.
+    Just click the 'Checkout' button on the right and we'll ask for a few details and place the order.
+  </p>
+  <%= render 'shared/order_items', :order => current_order %>
+</div>
+<%= link_to "Checkout", checkout_path, :class => 'checkout' %>

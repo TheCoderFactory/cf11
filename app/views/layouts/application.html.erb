@@ -1,14 +1,166 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Testmyshoppe</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+  <head>
+    <title><%= @page_title %> - <%= Shoppe.settings.store_name %></title>
+    <%= stylesheet_link_tag :application %>
+    <%= javascript_include_tag :application %>
+    <%= csrf_meta_tags %>
+    <%= yield :head %>
+    <script src="//use.typekit.net/dsk1ewq.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
+  </head>
+  <body>
+    <!-- <div class="demo">
+      <div class="inner">
+        <ul class="links">
+          <li>
+            <%# link_to "Play with Shoppe Admin", "/shoppe" %>
+          </li>
+          <li>
+            <%# link_to "Browse the code", "http://github.com/tryshoppe/core" %>
+          </li>
+        </ul>
+        <p class="text">This is a demo store built with #{link_to 'Shoppe', 'http://tryshoppe.com'} - an open source e-commerce platform for Rails.</p>
+      </div>
+    </div> -->
+    <%= display_flash %>
+    <!-- The main header displayed on all pages
+    -->
+    <!-- Sometimes will be shorted as the page content dictates. 
+    -->
+    <header class="main">
+      <div class="inner">
+        <!-- Primary navigation
+        -->
+        <nav class="main">
+          <ul>
+            <li>
+              <%= link_to "Home", root_path, :nav_item => :home %>
+            </li>
+            <li>
+              <%# link_to "Our catalogue", catalogue_path, :nav_item => :catalogue, :class => 'noborder' %>
+              <ul>
+                <% for category in Shoppe::ProductCategory.ordered %>
+                  <li>
+                    <%= link_to category.name, products_path(category.permalink) %>
+                  </li>
+                <% end %>
+              </ul>
+            </li>
+            <li>
+              <% link_to "Why shop with us?", root_path, :nav_item => :why %>
+            </li>
+            <li>
+              <%= link_to "Community", community_path, :nav_item => :community %>
+            </li>
+            <li>
+              <%= link_to "Women in Tech", women_in_tech_path, :nav_item => :women_in_tech %>
+            </li>
+          </ul>
+          <h1>
+            <%= link_to Shoppe.settings.store_name, root_path %>
+          </h1>
+        </nav>
+        <% if @full_header %>
+          <h2>Build your future</h2>
+          <p class="intro">Check out our lovely products on this page and then you can buy them through the website with just a few clicks using our supremely simple ordering system.</p>
+        <% end %>
+      </div>
+      <% if @full_header %>
+        <div class="bar">
+          <div class="inner">
+            <p class="call">Call us on <b>01202 901 101</b> if you have any questions.</p>
+            <!-- <p class="offer"><b>This week only!</b> FREE next day shipping on all orders over &pound;30.</p> -->
+          </div>
+        </div>
+      <% end %>
+    </header>
+    <!-- Main content section
+    -->
+    <section class="content">
+      <div class="inner">
+        <!-- Sidebar
+        -->
+        <section class="sidebar">
+          <% if content_for?(:sidebar) %>
+            <%= yield :sidebar %>
+          <% else %>
+            <% if has_order? %>
+              <%= render 'shared/basket' %>
+            <% end %>
+            <%= render 'shared/reasons' %>
+          <% end %>
+        </section>
+        <!-- Primary section
+        -->
+        <section class="primary">
+          <%= yield %>
+        </section>
+      </div>
+    </section>
+    <!-- Footer
+    -->
+    <footer class="main">
+      <div class="inner">
+        <!-- Useful footer links (policies etc...)
+        -->
+        <ul class="links">
+          <li>
+            <%= link_to "Terms & Conditions", root_path %>
+          </li>
+          <li>
+            <%= link_to "Privacy policy", root_path %>
+          </li>
+          <li>
+            <%= link_to "Returns policy", root_path %>
+          </li>
+          <li>
+            <%= link_to "Frequently asked questions", root_path %>
+          </li>
+          <li>
+            <%= link_to "Cookie policy", root_path %>
+          </li>
+        </ul>
+        <div class="callUs">
+          <p>Got any questions? Call us today:</p>
+          <p class="number">01202 901 101</p>
+          <p>We're open 9am to 5pm, Monday to Friday.</p>
+          <!-- Links to social media
+          -->
+          <ul class="social">
+            <li class="twitter">
+              <%= link_to "Twitter", 'http://twitter.com/niftyware' %>
+            </li>
+            <li class="facebook">
+              <%= link_to "Facebook", "http://facebook.com/niftyware" %>
+            </li>
+            <li class="pinterest">
+              <%= link_to "Pinterest", "http://pinterest.com" %>
+            </li>
+            <li class="linkedin">
+              <%= link_to "Linked In", "http://linkedin.com" %>
+            </li>
+            <li class="vimeo">
+              <%= link_to "Vimeo", "http://vimeo.com" %>
+            </li>
+            <li class="youtube">
+              <%= link_to "Youtube", "http://youtube.com" %>
+            </li>
+          </ul>
+        </div>
+        <!-- Copyright & trademark information
+        -->
+        <div class="copyright">
+          <p>&copy; #{Date.today.year} Shoppe. All Rights Reserved.</p>
+          <p>All third party logos &amp; product images &copy; their respective owners.</p>
+          <p>
+            Shoppe is a trading name of Niftyware Limited.<br />
+            Company registration number: 8514362.<br />
+            VAT registration number: GB 123 123 123.
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
+

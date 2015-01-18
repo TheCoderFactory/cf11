@@ -1,0 +1,16 @@
+<% @page_title = 'Checkout' %>
+<%= render 'orders/checkout_sidebar' %>
+<div class="checkout">
+  <p class="secure">Secure connection</p>
+  <h3>Pay using your credit/debit card</h3>
+  <form action='<%= checkout_payment_path %>' method='post' class='stripeForm'>
+  <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+  <input type='hidden' name='stripe_token' data-stripe='token' />
+  <input type='text' data-stripe='number' placeholder='XXXX XXXX XXXX XXXX'>
+  <input type='text' data-stripe='exp_month' placeholder='MM'>
+  <input type='text' data-stripe='exp_year' placeholder='YYYY'>
+  <input type="text" size="4" data-stripe="cvc"/>
+  <input type="submit" value="Continue">
+</form>
+</div>
+<%= shoppe_stripe_javascript %>
