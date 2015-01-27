@@ -1,7 +1,7 @@
 == README
 
 To set up:
-''''
+
 git clone https://github.com/TheCoderFactory/cf11.git
 
 bundle
@@ -15,18 +15,16 @@ rake db:migrate
 rake db:seed
 
 rails s
-''''
+
 
 Go to localhost:3000/store
 
 Login with admin@example.com/password
-
-**Import courses:
+*Import courses:
 Go to Products - click on Import Products button
+Select WorkshopList.csv and upload
 
-'''Select WorkshopList.csv and upload
-
-**Import posts:
+Import posts:
 Go to localhost:3000/posts - find the import upload
-'''Select all_posts.csv and upload
+Select all_posts.csv and upload
 
