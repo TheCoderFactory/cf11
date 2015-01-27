@@ -1,0 +1,16 @@
+name,sku,parent,start_date,end_date,start_time,end_time,location,description,short_description,weight,price,category_name,qty
+Web Design Weekend Workshop,WDW15,,,,,,,Learn Web Design,Learn Web Design,0,,Workshops,
+Learn to Code Weekend Workshop,L2C15,,,,,,,Learn to Code,Learn to Code,0,,Workshops,
+Learn To Code for Highschoolers,TL2C15,,,,,,,Learn to Code for 13-17 year olds,Learn to Code for 13-17 year olds,0,,Workshops,
+Wordpress Weekend Workshop,WWW15,,,,,,,Learn to build your own wordpress site,Learn to build your own wordpress site,0,,Workshops,
+Technology for Teachers Workshop,TTW15,,,,,,,Learn to teach your students about technology,Learn to teach your students about technology,0,,Workshops,
+Web App Developer PT,WADPT15,,,,,,,Learn to build your own application with Rails,Learn to build your own application with Rails,0,,Courses,
+Sydney [February],WDW15020,Web Design Weekend Workshop,14/02/2015,15/02/2015,1000,1600,Coder Factory HQ,,,0,360,,12
+Sydney2 [February],L2C15010,Learn to Code Weekend Workshop,21/02/2015,22/02/2015,1000,1600,Coder Factory HQ,,,0,360,,12
+Brisbane [February],WDW15021,Web Design Weekend Workshop,21/02/2015,22/02/2015,1000,1600,River City Labs,,,0,360,,12
+Sydney [March],WWW15030,Wordpress Weekend Workshop,07/03/2015,08/03/2015,1000,1600,Coder Factory HQ,,,0,360,,12
+Sydney2 [March],TL2C15030,Learn To Code for Highschoolers,14/03/2015,15/03/2015,1000,1600,Coder Factory HQ,,,0,260,,12
+Sydney3 [March],L2C15030,Learn to Code Weekend Workshop,21/03/2015,22/03/2015,1000,1600,Coder Factory HQ,,,0,360,,12
+Melbourne [March],WDW15030,Web Design Weekend Workshop,21/03/2015,22/03/2015,1000,1600,Depo8,,,0,360,,12
+Sydney [May],TTW15050,Technology for Teachers Workshop,02/05/2015,03/05/2015,1000,1600,Coder Factory HQ,,,0,360,,12
+"Sydney [Saturdays, Feb - May]",WADPT15020,Web App Developer PT,21/02/2015,23/05/2015,1000,1600,Coder Factory HQ,,,0,2250,,12

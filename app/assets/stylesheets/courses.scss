@@ -1,0 +1,91 @@
+// Extends
+//--------------------------------------------
+
+
+
+// Presentational
+//--------------------------------------------
+
+// ul.products {
+//   font-size:0.9em;
+//   margin:25px 0;
+//   overflow:hidden;
+//   li {
+//     margin-bottom:15px;
+//     width:50%;
+//     float:left;
+//     height:140px;
+//     div.img {
+//       background-repeat:no-repeat;
+//       background-size:contain;
+//       background-position: center 0;
+//       width:50%;
+//       height:120px	;
+//       float:left;
+//     }
+//     h4 {margin-left:50%; color:#216D74; font-size:1.1em; }
+//     h4 a { text-decoration:none;}
+//     h4 a:hover { text-decoration:underline;}
+//     p.info {margin-left:50%; margin:6px 0 10px 0; font-size:0.85em; line-height:1.7; color:#444;}
+//     p.buttons { float:right; margin-top:0;}
+//     p.buttons a { font-size:0.75em; font-weight:bold; background:#BEBEBE; color:$light; text-decoration:none; text-transform:uppercase; padding:3px 6px; border-radius:3px;}
+//     p.buttons a.add { background-color:#535353;}
+//     p.price {margin-left:50%; color:#222; font-size:1.0em; font-weight:bold;}
+//   }
+// }
+
+.course-list {
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  @media screen and (max-width: 600px) {
+    flex-wrap: wrap;
+  }
+}
+
+.course-item-content {
+  width: 50%;
+}
+
+$course-logo-size: 60px;
+
+.course-logo-ft {
+  margin: 0 auto;
+  text-transform: uppercase;
+  font-size: $font-size-xlarge;
+  text-align: center;
+  background: $light;
+  width: $course-logo-size;
+  height: $course-logo-size;
+  line-height: $course-logo-size;
+  border-radius: 100%;
+}
+
+.course-item {
+  padding: 50px 0;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  a {
+    text-decoration: none;
+  }
+  .btn-block {
+    width: 150px;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+
+.course-item-headline {
+  text-transform: uppercase;
+  font-family: $heading-font;
+  margin: 20px auto;
+  line-height: $line-height-tight;
+}
+
+.course-item-info {
+  font-weight: $font-weight-light;
+  margin: 20px auto;
+}

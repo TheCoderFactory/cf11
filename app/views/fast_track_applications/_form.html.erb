@@ -1,0 +1,118 @@
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <div class="text-center">
+      <h1 id="fast-track">Fast Track Application</h1>
+      <p class="lead blue-font">This is your first step towards an exciting new life in the world of tech. As places are limited, you are advised to complete your application to the best of your ability.</p>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <%= simple_form_for(@fast_track_application) do |f| %>
+          <%= f.error_notification %>
+            <%= invisible_captcha %>
+            <h2>Part 1</h2>
+            <br>
+            <div class="alert alert-default">
+              <label class="check_boxes optional control-label">Which programme are you applying for?</label>
+              <br>
+              <label for="fast_track_application_programme_choice_24_week_programme_aud_21900">
+                <input class="" id="fast_track_application_programme_choice_24_week_programme_aud_21900" name="fast_track_application[programme_choice][]" type="checkbox" value="24 week programme (AUD $21900)" /> 24 week programme (AUD $21900)
+              </label>
+              <br>
+              <label for="fast_track_application_programme_choice_12_week_programme_aud_14200">
+                <input class="" id="fast_track_application_programme_choice_12_week_programme_aud_14200" name="fast_track_application[programme_choice][]" type="checkbox" value="12 week programme (AUD $14200)" /> 12 week programme (AUD $14200)
+              </label>
+              <input name="fast_track_application[programme_choice][]" type="hidden" value="" />
+              <br>
+
+              </div>
+            <div class="form-group">
+              <%= f.input :one_line, label: 'Use one sentence to describe yourself', input_html: { class: 'form-control' } %>
+
+            </div>
+            <br>
+            <div class="form-group">
+              <%= f.input :reason, label: 'Please tell us why you are applying to the Fast Track programme', input_html: { class: 'form-control', rows: 8 } %>
+            </div>
+            <br>
+            <div class="form-group">
+              <%= f.input :info, label: 'What is your background? Career, study, interests?', input_html: { class: 'form-control', rows: 8 } %>
+            </div>
+            <br>
+            <div class="form-group">
+              <%= f.input :passion, label: 'What is your main passion in life?', input_html: { class: 'form-control', rows: 8 } %>
+            </div>
+            <br>
+            <div class="form-group">
+              <%= f.input :experience, label: 'Please describe what technology you have experience with, if any.', input_html: { class: 'form-control', rows: 8 } %>
+            </div>
+            <br>
+            <div class="form-group">
+              <%= f.input :challenge, label: 'Write a couple of paragraphs about a time you faced a challenge in life and overcame it.', input_html: { class: 'form-control', rows: 8 } %>
+            </div>
+            <br>
+            <div class="form-group">
+              <%= f.input :special, label: 'Why should we choose you to be a student in the Fast Track programme?', input_html: { class: 'form-control', rows: 8 } %>
+            </div>
+            <br>
+            <div class="form-group">
+              <%= f.input :links, label: 'Please provide any links that may help us learn more about you (LinkedIn, Facebook, Twitter, blog, etc)', input_html: { class: 'form-control', rows: 8 } %>
+            </div>
+            <br>
+            <div class="form-group">
+              <%= f.input :referral, label: 'How did you hear about the Fast Track programme? (max 200 characters)', input_html: { class: 'form-control' } %>
+            </div>
+            <hr>
+            <br>
+            <h2>Part 2: Personal information</h2>
+            <br>
+            <div class="row">
+              <div class="form-group col-md-6">
+                <%= f.input :first_name, input_html: { class: 'form-control' } %>
+              </div>
+              <div class="form-group col-md-6">
+                <%= f.input :last_name, input_html: { class: 'form-control' } %>
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="form-group col-md-6">
+                <%= f.input :city, label: 'Which city do you currently live in?', input_html: { class: 'form-control' } %>
+              </div>
+              <div class="form-group col-md-6">
+                <%= f.input :country, label: 'Which country do you currently live in?', input_html: { class: 'form-control' }, priority: ['Australia', 'Belgium', 'Canada', 'Cyprus', 'Denmark', 'Estonia', 'Finland', 'France', 'Germany', 'Hong Kong', 'Ireland', 'Italy', 'Japan', 'Malta', 'Netherlands', 'Norway', 'Sweden', 'United States', 'United Kingdom', ] %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="alert alert-material-orange">
+                  <strong>Visa requirements to study in Australia</strong>
+                  <br>
+                  If you don't have an Australian or New Zealand passport, are you able to find a visa that allows you to study in Australia for 3 - 6 months? See the <a href="http://www.immi.gov.au/" target="_blank" title="Australian Immigration website">Australian Immigration website</a> for more information. Many countries have a working holiday visa programme with Australia - see Visas <a href="http://www.immi.gov.au/visas/pages/462.aspx" target="_blank" title="Visa 426">462</a> and <a href="http://www.immi.gov.au/visas/pages/417.aspx" target="_blank" title="Visa 417">417</a>.
+                  <div class="boolean optional fast_track_application_visa"><label>I understand that I may need a visa to study this programme in Australia. <input name="fast_track_application[visa]" type="hidden" value="0" /><input class="boolean optional " id="fast_track_application_visa" name="fast_track_application[visa]" type="checkbox" value="1" /></label>
+                </div>
+              </div>
+            </div>
+          </div>
+            <br>
+            <div class="row">
+              <div class="form-group col-md-6">
+                <%= f.input :age, input_html: { class: 'form-control' } %>
+              </div>
+              <div class="form-group col-md-6">
+                <%= f.input :gender, label: 'Which gender do you identify as?', collection: ['Female', 'Male', 'Neither'], input_html: { class: 'form-control' } %>
+              </div>
+            </div>
+            <br>
+              <div class="form-group">
+                <%= f.input :email, input_html: { class: 'form-control' } %>
+              </div>
+          <div class="submit">
+            <%= f.submit 'Apply for Fast Track', class: 'btn btn-material-lightblue btn-lg' %>
+            <p class="blue-font">A confirmation will be sent to you almost immediately.</p>
+          </div>
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -10,7 +10,7 @@ class ProductsController < ApplicationController
   end
   
   def index
-    @products = @product_category.products.includes(:default_image, :product_category, :variants).root.active
+    @products = @product_category.products.includes(:product_category, :variants).root.active
   end
   
   def filter
@@ -18,19 +18,19 @@ class ProductsController < ApplicationController
   end
   
   def categories
-    @product_categories = Shoppe::ProductCategory.ordered.includes(:image)
+    @product_categories = Shoppe::ProductCategory.ordered
   end
   
   def show
     @attributes = @product.product_attributes.public.to_a
-    @product_variants = @product.variants.sku
+    @product_variants = @product.variants
   end
   
   def add_to_basket
     product_to_order = params[:variant] ? @product.variants.find(params[:variant].to_i) : @product
     current_order.order_items.add_item(product_to_order, params[:quantity].blank? ? 1 : params[:quantity].to_i)
     respond_to do |wants|
-      wants.html { redirect_to request.referer }
+      wants.html { redirect_to basket_path }
       wants.json { render :json => {:added => true} }
     end
   rescue Shoppe::Errors::NotEnoughStock => e

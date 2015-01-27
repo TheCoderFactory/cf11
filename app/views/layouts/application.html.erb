@@ -8,11 +8,12 @@
     <%= yield :head %>
     <script src="//use.typekit.net/dsk1ewq.js"></script>
     <script>try{Typekit.load();}catch(e){}</script>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   </head>
   <body>
-    <!-- <div class="demo">
-      <div class="inner">
-        <ul class="links">
+    <div class="top-bar">
+      <div class="main-row">
+        <ul>
           <li>
             <%# link_to "Play with Shoppe Admin", "/shoppe" %>
           </li>
@@ -20,67 +21,73 @@
             <%# link_to "Browse the code", "http://github.com/tryshoppe/core" %>
           </li>
         </ul>
-        <p class="text">This is a demo store built with #{link_to 'Shoppe', 'http://tryshoppe.com'} - an open source e-commerce platform for Rails.</p>
+        <p class="text">Fast Track course is filling up quick. Apply now here!</p>
       </div>
-    </div> -->
+    </div>
     <%= display_flash %>
     <!-- The main header displayed on all pages
     -->
-    <!-- Sometimes will be shorted as the page content dictates. 
+    <!-- Sometimes will be shorted as the page content dictates.
     -->
-    <header class="main">
-      <div class="inner">
-        <!-- Primary navigation
-        -->
-        <nav class="main">
-          <ul>
-            <li>
+    <header class="main-header">
+
+      <div class="main-row">
+        <!-- Primary navigation -->
+        <nav class="main-nav">
+          <ul class="main-nav-list">
+            <li class="main-nav-item">
               <%= link_to "Home", root_path, :nav_item => :home %>
             </li>
-            <li>
-              <%# link_to "Our catalogue", catalogue_path, :nav_item => :catalogue, :class => 'noborder' %>
-              <ul>
-                <% for category in Shoppe::ProductCategory.ordered %>
-                  <li>
-                    <%= link_to category.name, products_path(category.permalink) %>
-                  </li>
-                <% end %>
-              </ul>
+
+            <li class="main-nav-item">
+              <%= link_to "Our Courses", catalogue_path, :nav_item => :catalogue, :class => 'noborder' %>
             </li>
-            <li>
-              <% link_to "Why shop with us?", root_path, :nav_item => :why %>
-            </li>
-            <li>
+
+            <li class="main-nav-item">
               <%= link_to "Community", community_path, :nav_item => :community %>
             </li>
-            <li>
+
+            <li class="main-nav-item">
               <%= link_to "Women in Tech", women_in_tech_path, :nav_item => :women_in_tech %>
             </li>
+
+            <li class="main-nav-item">
+              <%= link_to "Blog", blog_path, :nav_item => :blog, class: 'test' %>
+            </li>
           </ul>
-          <h1>
-            <%= link_to Shoppe.settings.store_name, root_path %>
-          </h1>
+
+          <a class="logo" href="/">
+            <img src="<%= asset_path 'cf-logo.svg' %>" />
+            <h1 class="logo-title">coderfactory</h1>
+          </a>
         </nav>
+
         <% if @full_header %>
-          <h2>Build your future</h2>
-          <p class="intro">Check out our lovely products on this page and then you can buy them through the website with just a few clicks using our supremely simple ordering system.</p>
-        <% end %>
-      </div>
-      <% if @full_header %>
-        <div class="bar">
-          <div class="inner">
-            <p class="call">Call us on <b>01202 901 101</b> if you have any questions.</p>
-            <!-- <p class="offer"><b>This week only!</b> FREE next day shipping on all orders over &pound;30.</p> -->
-          </div>
+        <div class="call-to-action-wrapper">
+          <h2 class="call-to-action-headline">Build your future</h2>
+          <p class="call-to-action-info">There will be two kinds of people in this world in the near future, those who understand how the technology around us works, and those who don't. Start your journey today!</p>
         </div>
+        <% end %>
+
+      </div>
+
+      <% if @full_header %>
+      <div class="bar">
+        <div class="main-row">
+          <p class="call">Call us on <b>01202 901 101</b> if you have any questions.</p>
+          <!-- <p class="offer"><b>This week only!</b> FREE next day shipping on all orders over &pound;30.</p> -->
+        </div>
+      </div>
       <% end %>
+
     </header>
-    <!-- Main content section
-    -->
+
+    
+
+
     <section class="content">
-      <div class="inner">
-        <!-- Sidebar
-        -->
+
+        <!-- Sidebar Module -->
         <section class="sidebar">
           <% if content_for?(:sidebar) %>
             <%= yield :sidebar %>
@@ -88,7 +95,6 @@
             <% if has_order? %>
               <%= render 'shared/basket' %>
             <% end %>
-            <%= render 'shared/reasons' %>
           <% end %>
         </section>
         <!-- Primary section
@@ -96,37 +102,47 @@
         <section class="primary">
           <%= yield %>
         </section>
+    </section>
+
+
+    <section class="register-newsletter">
+      <div class="register-newsletter-wrapper">
+        <p class="register-newsletter-tagline">So much is happening at CoderFactory...</p>
+        <input type="text" class="input-text" placeholder="Enter Email Address" />
+        <button type="submit" class="btn-block btn-block-calm">Recieve Updates!</button>
       </div>
     </section>
-    <!-- Footer
-    -->
-    <footer class="main">
-      <div class="inner">
+
+
+    <footer class="main-footer">
+      <div class="main-row main-footer-wrapper">
         <!-- Useful footer links (policies etc...)
         -->
-        <ul class="links">
-          <li>
-            <%= link_to "Terms & Conditions", root_path %>
+        <ul class="main-footer-list">
+          <li class="main-footer-item">
+            <%= link_to "Contact Coder Factory", root_path, class: 'first-item' %>
           </li>
-          <li>
+          <li class="main-footer-item">
             <%= link_to "Privacy policy", root_path %>
           </li>
-          <li>
+          <li class="main-footer-item">
             <%= link_to "Returns policy", root_path %>
           </li>
-          <li>
+          <li class="main-footer-item">
             <%= link_to "Frequently asked questions", root_path %>
           </li>
-          <li>
+          <li class="main-footer-item">
             <%= link_to "Cookie policy", root_path %>
           </li>
         </ul>
-        <div class="callUs">
-          <p>Got any questions? Call us today:</p>
-          <p class="number">01202 901 101</p>
-          <p>We're open 9am to 5pm, Monday to Friday.</p>
-          <!-- Links to social media
-          -->
+        <div class="footer-mission-statement">
+          <div class="logo">
+            <img src="<%= asset_path 'cf-logo.svg' %>" />
+            <h1 class="logo-title">coderfactory</h1>
+          </div>
+          <p class="mission-statement-info">
+            People say coding is like riding a bike, once you've ridden around the park a few times you probably know how to do a function or two. Coder Factory will provide every student a free bike for the duration of the course, because sometimes you might just want to ride a bike.
+          <!-- Links to social media -->
           <ul class="social">
             <li class="twitter">
               <%= link_to "Twitter", 'http://twitter.com/niftyware' %>
@@ -148,19 +164,8 @@
             </li>
           </ul>
         </div>
-        <!-- Copyright & trademark information
-        -->
-        <div class="copyright">
-          <p>&copy; #{Date.today.year} Shoppe. All Rights Reserved.</p>
-          <p>All third party logos &amp; product images &copy; their respective owners.</p>
-          <p>
-            Shoppe is a trading name of Niftyware Limited.<br />
-            Company registration number: 8514362.<br />
-            VAT registration number: GB 123 123 123.
-          </p>
-        </div>
       </div>
     </footer>
+
   </body>
 </html>
-

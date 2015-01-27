@@ -1,0 +1,61 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Fast Track Applications</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>City</th>
+      <th>Country</th>
+      <th>Email</th>
+      <th>Age</th>
+      <th>Gender</th>
+      <th>One line</th>
+      <th>Reason</th>
+      <th>Info</th>
+      <th>Passion</th>
+      <th>Experience</th>
+      <th>Challenge</th>
+      <th>Special</th>
+      <th>Links</th>
+      <th>Referral</th>
+      <th>Visa</th>
+      <th>Programme choice</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fast_track_applications.each do |fast_track_application| %>
+      <tr>
+        <td><%= fast_track_application.first_name %></td>
+        <td><%= fast_track_application.last_name %></td>
+        <td><%= fast_track_application.city %></td>
+        <td><%= fast_track_application.country %></td>
+        <td><%= fast_track_application.email %></td>
+        <td><%= fast_track_application.age %></td>
+        <td><%= fast_track_application.gender %></td>
+        <td><%= fast_track_application.one_line %></td>
+        <td><%= fast_track_application.reason %></td>
+        <td><%= fast_track_application.info %></td>
+        <td><%= fast_track_application.passion %></td>
+        <td><%= fast_track_application.experience %></td>
+        <td><%= fast_track_application.challenge %></td>
+        <td><%= fast_track_application.special %></td>
+        <td><%= fast_track_application.links %></td>
+        <td><%= fast_track_application.referral %></td>
+        <td><%= fast_track_application.visa %></td>
+        <td><%= fast_track_application.programme_choice %></td>
+        <td><%= link_to 'Show', fast_track_application %></td>
+        <td><%= link_to 'Edit', edit_fast_track_application_path(fast_track_application) %></td>
+        <td><%= link_to 'Destroy', fast_track_application, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fast track application', new_fast_track_application_path %>

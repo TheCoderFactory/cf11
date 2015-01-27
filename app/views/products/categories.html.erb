@@ -4,7 +4,7 @@
   <ul>
     <% for category in @product_categories %>
       <li>
-        <div class="img" style="<%= category.image ? 'background-image:url(' + category.image.path + ' )' : 'background-color:#efefef' %>"></div>
+        <!-- <div class="img" style="<%# category.image ? 'background-image:url(' + category.image.path + ' )' : 'background-color:#efefef' %>"></div> -->
         <div class="space">
           <h4>
             <%= link_to category.name, products_path(category.permalink) %>

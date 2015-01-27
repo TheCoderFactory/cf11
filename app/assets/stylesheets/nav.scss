@@ -1,0 +1,69 @@
+// Presentational
+//--------------------------------------------
+
+.main-nav {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-nav-list {
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  width: 66%;
+}
+
+.main-nav-item {
+  color: $light;
+  display: block;
+  @extend %link-hover;
+  a {
+    text-decoration: none;
+  }
+}
+
+.active {
+  color: $dirty-gold;
+  border-color: $dirty-gold;
+}
+
+.main-nav-nested-list {
+  position: absolute;
+  display: none;
+  margin-top: 0px;
+  display: flex;
+  background: $light;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 150px;
+  width: 100px;
+}
+
+.main-nav-nested-item {
+  a {
+    color: $darknight;
+    border: 0;
+    padding: 0 0 0 5px;
+  }
+  &:hover {
+    color: $dirty-gold;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  color: $light;
+  font-size: 1.1em;
+  text-decoration: none;
+}
+
+.logo-title {
+  font-size: $font-size-large;
+  display: inline-block;
+  font-weight: 300;
+  font-family: $body-font;
+  padding: 0 0 0 0.7em;
+}

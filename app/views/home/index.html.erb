@@ -1,10 +1,61 @@
 <% active_nav_item :home %>
 <% @full_header = true %>
 <% @page_title = 'Welcome' %>
-<div class="home">
-  <p class="browse">
-    <%= link_to "Browse our whole catalogue", catalogue_path %>
-  </p>
-  <h2>Introducing our featured products</h2>
-</div>
-<%= render 'shared/product_list', :products => @products.includes(:default_image) %>
+
+<!-- Why Coderfactory Module -->
+    <section class="why-cf">
+      <div class="main-row why-cf-wrapper">
+        <div class="why-cf-icons">
+          <img src="<%= asset_path 'icon-code.svg' %>" />
+          <img src="<%= asset_path 'icon-acyhat.svg' %>" />
+          <img src="<%= asset_path 'icon-cf-logo.svg' %>" />
+        </div>
+        <p class="why-cf-info">At Coderfactory, we are creating an Australian community of people empowered to build take the next step and build a new career or startup by offering full-time immersive programs, classes and workshops on the most relevant skills of the 21st century – from web development and user experience design, to business fundamentals, to data science, to product management and digital marketing.</p>
+      </div>
+    </section>
+<ul class="course-list">
+  
+    <li class="course-item" style="background: #2C3E50;">
+      <div class="course-item-content">
+        <h4 class="course-logo-ft" style="color: black;">f</h4>
+        <h2 class="course-item-headline">
+          Full Time Courses
+        </h2>
+        <p class="course-item-info">
+          Make a career change with our 24 week intensive full time courses.
+        </p>
+        <p class="btn-block btn-block-light">
+          <a href="/fast-track">View Courses</a>
+        </p>
+      </div>
+    </li>
+    <li class="course-item" style="background: #00BA67;">
+      <div class="course-item-content">
+        <h4 class="course-logo-ft" style="color: black;">w</h4>
+        <h2 class="course-item-headline">
+          Weekend Workshops
+        </h2>
+        <p class="course-item-info">
+          Stay current and gain insight with our fast-paced and fun short-form offerings.
+        </p>
+        <p class="btn-block btn-block-light">
+          <a href="http://localhost:3000/products/workshops">View Workshops</a>
+        </p>
+      </div>
+    </li>
+    <li class="course-item" style="background: #2C3E50;">
+      <div class="course-item-content">
+        <h4 class="course-logo-ft" style="color: black;">p</h4>
+        <h2 class="course-item-headline">
+          Part Time Courses
+        </h2>
+        <p class="course-item-info">
+          Learn to build web applications while you keep you day job.
+        </p>
+        <p class="btn-block btn-block-light">
+          <a href="products/part-time-courses">View Courses</a>
+        </p>
+      </div>
+    </li>
+</ul>
+

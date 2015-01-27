@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Course:</strong>
+  <%= @course_registration.course_id %>
+</p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @course_registration.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @course_registration.last_name %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @course_registration.city %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @course_registration.country %>
+</p>
+
+<p>
+  <strong>Reason:</strong>
+  <%= @course_registration.reason %>
+</p>
+
+<p>
+  <strong>Bio:</strong>
+  <%= @course_registration.bio %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @course_registration.email %>
+</p>
+
+<%= link_to 'Edit', edit_course_registration_path(@course_registration) %> |
+<%= link_to 'Back', course_registrations_path %>

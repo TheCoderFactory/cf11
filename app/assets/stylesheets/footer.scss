@@ -1,0 +1,114 @@
+// Presentational
+//--------------------------------------------
+
+.main-footer {
+  color: $midnight-light;
+  font-size: 0.9em;
+  overflow: hidden;
+  clear: both;
+  background: $midnight;
+  height: 350px;
+  display: flex;
+  align-items: center;
+}
+
+.main-footer-list {
+  line-height: 1.8;
+  position: relative;
+  top: 20px;
+  height: 190px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.main-footer-wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+
+.main-footer-item {
+  @extend %link-hover;
+  a {
+    text-decoration: none;
+  }
+}
+
+.first-item {
+  font-weight: $font-weight-bold;
+  color: $light;
+}
+
+.footer-mission-statement {
+  width: 40%;
+  line-height: 1.4;
+  .logo {
+    font-size: $font-size-xlarge;
+  }
+  .number {
+    color: $light;
+    font-size: 2.2em;
+    font-weight: bold;
+    margin: 2px 0;
+  }
+}
+
+.social {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 25px;
+  overflow: hidden;
+  a {
+    display: block;
+    width: 24px;
+    height: 24px;
+    text-indent: -40000px;
+    opacity: 0.3;
+    background-size: 24px;
+    background-repeat: no-repeat;
+    border-radius: 100%;
+    &:hover {
+      opacity: 1;
+      background: $dirty-gold;
+      background-size: 24px;
+    }
+  }
+  .facebook a {
+    background-image: image-url('social/facebook.svg');
+  }
+  .twitter a {
+    background-image: image-url('social/twitter.svg');
+  }
+  .pinterest a {
+    background-image: image-url('social/pinterest.svg');
+  }
+  .linkedin a {
+    background-image: image-url('social/linkedin.svg');
+  }
+  .youtube a {
+    background-image: image-url('social/youtube.svg');
+  }
+  .vimeo a {
+    background-image: image-url('social/vimeo.svg');
+  }
+}
+
+.trademark {
+}
+
+.overlay {
+  display: block;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 4000px;
+  background: rgba(0,0,0,0.3);
+}
+
+blockquote {
+  background-color: #ccc;
+  margin-left: 10px;
+  padding: 10px;
+}

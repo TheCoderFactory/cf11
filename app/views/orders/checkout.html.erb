@@ -55,7 +55,7 @@
               <%= f.label :billing_address1, "Billing Address", :class => 'req' %>
             </dt>
             <dd>
-              <%= f.text_field :billing_address1, :placeholder => "Line 1" %>
+              <%= f.text_field :billing_address1, :placeholder => "Building, Street" %>
             </dd>
             <dd>
               <%= f.text_field :billing_address3, :placeholder => "Town/City" %>
@@ -69,10 +69,10 @@
             <dd>
               <%= f.collection_select :billing_country_id, Shoppe::Country.ordered, :id, :name, {:selected => 13} %>
             </dd>
-            <dd>
-              <%= f.check_box :separate_delivery_address %>
-              <%= f.label :separate_delivery_address, "Deliver to a different address?" %>
-            </dd>
+            <!-- <dd>
+              <%# f.check_box :separate_delivery_address %>
+              <%# f.label :separate_delivery_address, "Deliver to a different address?" %>
+            </dd> -->
           </dl>
           <dl class="delivery">
             <dt>

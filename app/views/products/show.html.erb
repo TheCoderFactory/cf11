@@ -2,7 +2,7 @@
 <% @page_title = @product.name + " - " + @product.product_category.name %>
 <div class="product">
   <% if @product.default_image %>
-    <div class="img" style="background-image:url(<%= asset_path @product.permalink + '.jpg' %>)"></div>
+    <div class="img" style="background-image:url(<%= asset_path @product.default_image %>)"></div>
   <% end %>
   <h2>
     <%= @product.name %>
@@ -21,8 +21,11 @@
               <p class="stock no">Class full</p>
             <% end %>
             <h4>
-              <%= variant.name %> (<%= variant.sku %>)
+              <%= variant.location.city %>, <%= variant.location.name %>
             </h4>
+            <p class="date">
+              <%= variant.start_date.strftime('%d') %> - <%= variant.end_date.strftime('%d %b %Y') %>
+            </p>
             <p class="price">
               <%= number_to_currency(variant.price * 1.1) %> (incl. GST)
             </p>

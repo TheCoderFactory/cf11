@@ -1,2 +1,297 @@
-<h1>Community#index</h1>
-<p>Find me in app/views/community/index.html.erb</p>
+<%= content_for :title, 'Join the Coder Factory Community' %>
+<%= content_for :description, 'Check out the great community events and supportive partners. Join our thriving community of creators, makers and coders.' %>
+<% active_nav_item :community %>
+
+
+
+				<h1>We <span class="red"><i class="fa fa-heart"></i></span>community</h1>
+				<h2 class="subtitle">Be a part of a vibrant and welcoming<br> community of coders and technology fans.</h2>
+				<br>
+				
+					<!-- <div class="text-center">
+					
+					<a href="#" class="btn btn-primary btn-lg btn-raised wow fadeInUp" data-toggle="modal" data-target="#register">Join the movement</a>
+				</div> -->
+					<div class="learn-more">
+						<a href="#feature-1">learn more<br /><i class="fa fa-angle-down"></i></a>
+					</div>
+
+	
+
+
+<section class="section" id="events">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-lg-offset-1 col-lg-10">
+				<h2 class="main-title wow fadeInUp text-center">Events & Meetup Groups</h2>
+				<div class="row">
+					<div class="col-lg-6">
+						<div class="panel panel-material-lightblue wow fadeInUp" data-wow-delay="0.6s">
+							<div class="panel-heading text-center">
+						    <h3><i class="fa fa-lg fa-trophy"></i> Sunday Coder Club</h3>
+						  </div>
+						  <div class="panel-body blue-font">
+						    <p class="panel-text">A fortnightly meetup for coders of all stripes. Beginners going through tutorials, experienced coders working on their own projects. Be inspired and socialise with other tech fans. </p>
+						  <a href="http://www.meetup.com/Sunday-Coder-Club/" target="_blank" class="btn btn-material-lightblue btn-sm">Sydney</a>
+						  &nbsp;
+						  <a href="http://www.meetup.com/Brisbane-Coder-Club/" target="_blank" class="btn btn-material-lightblue btn-sm">Brisbane</a>
+						  </div>
+
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div class="panel panel-material-orange wow fadeInUp" data-wow-delay="0.6s">
+							<div class="panel-heading text-center">
+						    <h3><i class="fa fa-lg fa-graduation-cap"></i> Sydney on Rails</h3>
+						  </div>
+						  <div class="panel-body blue-font">
+						    <p class="panel-text">A fortnightly workshop session to help you get started with Ruby on Rails. Aimed at total beginners, it's a great opportunity to be introduced to the community.</p>
+						    <br>
+						  <a href="http://www.meetup.com/Sydney-on-Rails/" target="_blank" class="btn btn-material-orange btn-sm">Sydney</a>
+						  </div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-6">
+						<div class="panel panel-material-lightgreen wow fadeInUp" data-wow-delay="0.6s">
+							<div class="panel-heading text-center">
+						    <h3><i class="fa fa-lg fa-plus"></i> Sydney Web Apps Group</h3>
+						  </div>
+						  <div class="panel-body blue-font">
+						    <p class="panel-text">A large community of web app coders coming together to learn and connect. With industry experts presenting and sharing their knowledge, it's a great place to learn something new.</p>
+
+						  <a href="http://www.meetup.com/SydneyWebApps/" target="_blank" class="btn btn-material-lightgreen btn-sm">Sydney</a>
+						  </div>
+						</div>
+					</div>
+				
+				
+					<div class="col-lg-6">
+						<div class="panel panel-material-pink wow fadeInUp" data-wow-delay="0.6s">
+							<div class="panel-heading text-center">
+						    <h3><i class="fa fa-lg fa-certificate"></i> Young Entrepreneurs</h3>
+						  </div>
+						  <div class="panel-body blue-font">
+
+								<p class="panel-text">This group is a fanatastic opportunity for young entrepreneurs to meet each other, share ideas and learn about how technology can bring their dreams to life.</p>
+								<br>
+						  <a href="http://www.meetup.com/Entrepreneurial-Australians/" target="_blank" class="btn btn-material-pink btn-sm">Sydney</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="text-center"><a href="#" class="btn btn-flat btn-link disabled">Want to list your meetup group here?</a>
+				<a href="#contact" class="btn btn-primary btn-flat">Get in touch.</a>
+			</div>
+		<div class="learn-more wow fadeInUp text-center" data-wow-delay="1.25s">
+			<a href="#what" style="color:#1f2b3a"><br /><i class="fa fa-angle-down"></i></a>
+		</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<section class="section lightgray" id="partners">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-lg-offset-1 col-lg-10">
+				<h2 class="main-title wow fadeInUp text-center">Our Amazing Partners</h2>
+				
+						<p class="lead blue-font text-center">These great companies support the Coder Factory tech community and a diverse and welcoming industry.</p>
+						<div class="row">
+							<div class="panel panel-default">
+					<div class="panel-body blue-font partner-logo-box">
+						
+						<div class="row">
+							<div class="col-md-4">
+								<a href="http://www.lonelyplanet.com/" target="_blank">
+								<img class="img-responsive parnter-logo" src="<%=asset_path('lonelyplanet.png')%>" /></a>
+							</div>
+							<div class="col-md-4">
+								<a href="http://www.sitepoint.com/" target="_blank">
+								<img class="img-responsive parnter-logo" src="<%=asset_path('sitepoint.png')%>" /></a>
+							</div>
+					    <div class="col-md-4">
+								<a href="http://www.codehire.com/" target="_blank">
+					    	<img class="img-responsive parnter-logo" src="<%=asset_path('codehire.png')%>" /></a>
+					    </div>
+				    </div>
+				    <div class="row">
+				    	<br><br>
+				    </div>
+				    <div class="row">
+					    	<div class="col-md-4">
+								<a href="http://www.locomote.com/" target="_blank"><img class="img-responsive parnter-logo" src="<%=asset_path('locomote.jpg')%>" /></a></div>
+					    	<div class="col-md-4">
+								<a href="http://www.getvero.com/" target="_blank"><img class="img-responsive parnter-logo" src="<%=asset_path('getvero.png')%>" /></a></div>
+					    	<div class="col-md-4">
+								<a href="https://learnable.com/" target="_blank"><img class="img-responsive parnter-logo" src="<%=asset_path('learnable.jpg')%>" /></a></div>
+				    </div>
+				    <div class="row">
+				    	<br><br>
+				    </div>
+				    <div class="row">
+					    	<div class="col-md-4">
+								<a href="https://flippa.com/" target="_blank"><img class="img-responsive parnter-logo" src="<%=asset_path('flippa.jpg')%>" /></a></div>
+					    	<div class="col-md-4">
+								<a href="http://www.thoughtworks.com/" target="_blank"><img class="img-responsive parnter-logo" src="<%=asset_path('Thoughtworks.png')%>" /></a></div>
+					    	<div class="col-md-4">
+								<a href="http://www.dreamscapenetworks.com/" target="_blank"><img class="img-responsive parnter-logo" src="<%=asset_path('dreamscape.png')%>" /></a></div>
+				    </div>
+						<div class="row">
+				    	<br><br>
+							<div class="col-md-4">
+								<a href="http://crazydomains.com.au" target="_blank">
+								<img class="img-responsive parnter-logo" src="<%=asset_path('crazydomains.jpg')%>" /></a>
+							</div>
+							<div class="col-md-4">
+								<a href="https://www.dropbox.com/" target="_blank">
+								<img class="img-responsive parnter-logo" src="<%=asset_path('dropbox.png')%>" /></a>
+							</div>
+					    <div class="col-md-4">
+								<a href="http://www.woman.com.au/" target="_blank">
+					    	<img class="img-responsive parnter-logo" src="<%=asset_path('womancomau.jpg')%>" /></a>
+					    </div>
+				    </div>
+						<div class="row">
+				    	<br><br>
+							<div class="col-md-4">
+								<a href="http://codr.tv/" target="_blank">
+								<img class="img-responsive parnter-logo" src="<%=asset_path('codrtv.png')%>" /></a>
+							</div>
+							<div class="col-md-4">
+								<a href="https://www.vistr.co/" target="_blank">
+								<img class="img-responsive parnter-logo" src="<%=asset_path('vistr.png')%>" /></a>
+							</div>
+					    <div class="col-md-4">
+								<a href="https://muru-d.com/" target="_blank">
+					    	<img class="img-responsive parnter-logo" src="<%=asset_path('murud.png')%>" /></a>
+					    </div>
+				    </div>
+						<div class="row">
+				    	<br><br>
+							<div class="col-md-4">
+								<a href="http://www.spacecubed.com/" target="_blank">
+								<img class="img-responsive parnter-logo" src="<%=asset_path('spacecubed.png')%>" /></a>
+							</div>
+							<div class="col-md-4">
+								<a href="http://www.rivercitylabs.net/" target="_blank">
+								<img class="img-responsive parnter-logo" src="<%=asset_path('rivercitylabs.jpg')%>" /></a>
+							</div>
+					    <div class="col-md-4">
+								<a href="http://foundrmag.com/" target="_blank">
+					    	<img class="img-responsive parnter-logo" src="<%=asset_path('foundr.png')%>" /></a>
+					    </div>
+				    </div>
+						<div class="row">
+				    	<br><br>
+							<div class="col-md-4">
+								<a href="https://www.coinjar.com/" target="_blank">
+								<img class="img-responsive parnter-logo" src="<%=asset_path('coinjar.png')%>" /></a>
+							</div>
+							<div class="col-md-4">
+								<a href="http://www.pozible.com/" target="_blank">
+								<img class="img-responsive parnter-logo" src="<%=asset_path('pozible.png')%>" /></a>
+							</div>
+					    <div class="col-md-4">
+								<a href="http://crowdsourcehire.com/" target="_blank">
+					    	<img class="img-responsive parnter-logo" src="<%=asset_path('crowdsourcehire.png')%>" /></a>
+					    </div>
+				    </div>
+						<div class="row">
+				    	<br><br>
+							<div class="col-md-4">
+								<a href="http://kapcher.co/" target="_blank">
+								<img class="img-responsive parnter-logo" src="<%=asset_path('kapcher.png')%>" /></a>
+							</div>
+							<div class="col-md-4">
+								<a href="http://www.crowdsurfa.com/" target="_blank">
+								<img class="img-responsive parnter-logo" src="<%=asset_path('crowdsurfa.png')%>" /></a>
+							</div>
+					    <div class="col-md-4">
+								<a href="https://www.airpair.com/" target="_blank">
+					    	<img class="img-responsive parnter-logo" src="<%=asset_path('airpair.png')%>" /></a>
+					    </div>
+				    </div>
+						<div class="row">
+				    	<br><br>
+							<div class="col-md-4">
+								<a href="https://nomadlist.io/" target="_blank">
+								<img class="img-responsive parnter-logo" src="<%=asset_path('nomadlist.png')%>" /></a>
+							</div>
+							<div class="col-md-4">
+								<a href="https://www.growthhacker.tv/" target="_blank">
+								<img class="img-responsive parnter-logo" src="<%=asset_path('growthhackertv.png')%>" /></a>
+							</div>
+					    <div class="col-md-4">
+								<a href="http://incubate.org.au/" target="_blank">
+					    	<img class="img-responsive parnter-logo" src="<%=asset_path('incubate.png')%>" /></a>
+					    </div>
+				    </div>
+				    	<br><br>
+
+					</div>
+					</div>
+				</div>
+				<div class="text-center"><a href="#" class="btn btn-flat btn-link disabled">Want to show your support?</a>
+				<a href="#" class="btn btn-primary btn-flat">Become a community partner.</a>
+			</div>
+		<div class="learn-more wow fadeInUp text-center" data-wow-delay="1.25s">
+			<a href="#what" style="color:#1f2b3a"><br /><i class="fa fa-angle-down"></i></a>
+		</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- <section class="section" id="women">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-lg-offset-1 col-lg-10">
+				<h2 class="main-title wow fadeInUp text-center blue-font">Women in Tech</h2>
+				<div class="panel panel-default">
+					<div class="panel-body blue-font">
+						<p class="lead">Coder Factory is a massive advocate for a diverse and welcoming tech community. Here are some ways we attract more women into the industry.</p>
+						<div class="row">
+							<div class="col-md-4"> </div>
+				    	<div class="col-md-4"> </div>
+				    	<div class="col-md-4"> </div>
+				    	<div class="col-md-4"> </div>
+				    	
+						</div>
+						<blockquote>We need diversity of thought in the world to face the new challenges. <small>Tim Berners-Lee</small></blockquote>
+						<div class="text-center"><a href="#" class="btn btn-flat btn-link disabled">Show your support.</a>
+				<a href="#" class="btn btn-primary btn-raised">Become a community partner.</a>
+			</div>
+					</div>
+				</div>
+				
+		<div class="learn-more wow fadeInUp text-center" data-wow-delay="1.25s">
+			<a href="#what" style="color:#1f2b3a"><br /><i class="fa fa-angle-down"></i></a>
+		</div>
+			</div>
+		</div>
+	</div>
+</section> -->
+
+<section class="section" id="hackathons">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-lg-offset-1 col-lg-10">
+				<h2 class="main-title wow fadeInUp text-center">Hackathons (coming soon)</h2>
+				<div class="panel panel-default">
+					<div class="panel-body blue-font">
+						<p class="lead">Coder Factory has some awesome and exciting hackathons on the way which will be disrupting the way that hackathons are run.</p>
+						<p>More details soon....</p>
+				</div>
+				
+			</div>
+		<div class="learn-more wow fadeInUp text-center" data-wow-delay="1.25s">
+			<a href="#what" style="color:#1f2b3a"><br /><i class="fa fa-angle-down"></i></a>
+		</div>
+			</div>
+		</div>
+	</div>
+</section>

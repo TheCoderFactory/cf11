@@ -1,0 +1,41 @@
+// Presentational
+//--------------------------------------------
+
+// Contact Bar
+.bar {
+  background: rgba($light, 0.33);
+  height: 40px;
+  display: none;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  top: 97px;
+  .call {
+    float: left;
+    background-image: image-url('call.svg');
+    background-repeat: no-repeat;
+    background-position: 0 1px;
+    background-size: 16px;
+    padding-left: 22px;
+  }
+  .offer {
+    float: right;
+    background-image: image-url('tags.svg');
+  }
+}
+
+
+// Top Banner
+.top-bar {
+  background: $calm;
+  color: $light;
+  font-size: $font-size-medium;
+  font-weight: $font-weight-light;
+  height: 45px;
+  display: none;
+  align-items: center;
+}
+
+.top-bar-content {
+  margin: 0 auto;
+}

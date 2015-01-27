@@ -1,44 +1,65 @@
-<p id="notice"><%= notice %></p>
+<%= content_for :title, @post.title + ' @CoderFactory Blog - Sydney, Australia' %>
+<%= content_for :description, @post.title + ': ' + @post.lead %>
+<%= content_for :hero_image, @post.image %>
+<%= content_for :tagline, @post.published_date.strftime('%d %B %Y') %>
+<%= content_for :main_heading, @post.title %>
+<% active_nav_item :blog %>
+<div class="container blog-post">
+  <div class="row">
+    <div class="col-sm-7 col-sm-offset-1">
+      <div itemscope itemtype="http://schema.org/Article" class="post panel panel-default">
+      <div class="panel-body">
+      <div class="post-img">
+        <h2><a href="<%= post_url %>"><span itemprop="name"><%= @post.title %></span></a></h2>
+        <hr>
+        <div class="post_info clearfix">
+        <% if @profile %>
+        
+          <span class="author vcard">
+            <a rel="author" href="/profiles/<%= @profile.slug %>">
+              <%= image_tag @profile.profile_picture, class: 'img-thumbnail blog-profile', alt: @profile.name, width: '50px' %> 
+              <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                <%= @profile.name %>
+              </span>
+            </a>
+          </span>
+        <% end %>
+        &nbsp; 
+        <small>Published: <i class="fa fa-calendar"></i> 
+        <abbr class="published" itemprop="datePublished" content="<%= @post.published_date.strftime('%Y-%m-%d') %>" title="Published on <%= @post.published_date.strftime('%A, %e %B %Y, %l:%M%P') %>"><%= @post.published_date.strftime('%A, %e %B %Y') %></abbr></small>
+      </div>
+      <hr>
+        <img itemprop="image" src="<%= asset_path @post.image %>" alt="<%= @post.title %>" class="img-responsive img-thumbnail">
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_sharing_toolbox"></div>
+        <hr>
+      </div>
+      
+      <p class="lead">
+        <%= @post.lead.html_safe %>
+      </p>
+      <hr>
+      <div id="content">
+      <%= @post.content.html_safe %>
+      </div>
+      <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_sharing_toolbox"></div>
+      
+      <hr>
+    </div></div>
+    </div>
+    <div class="col-lg-3 hidden-xs">
+      <div class="panel panel-material-orange promo-box">
+        <div class="panel-heading">
+          <h4 class="panel-title"><i class="fa fa-fighter-jet"></i> Fast Track </h4>
+        </div>
+        <div class="panel-body">
+          <p>Six months to your new life in the tech industry. Become a developer at a tech startup or perhaps a digital nomad.</p>
+          <p>Applications are open now. Class starts 7th April 2015. Only 15 spaces available.</p>
+          <a href="/" class="btn btn-material-lightblue btn-raised">See the details</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
-
-<p>
-  <strong>Lead:</strong>
-  <%= @post.lead %>
-</p>
-
-<p>
-  <strong>Content:</strong>
-  <%= @post.content %>
-</p>
-
-<p>
-  <strong>Image:</strong>
-  <%= @post.image %>
-</p>
-
-<p>
-  <strong>Slug:</strong>
-  <%= @post.slug %>
-</p>
-
-<p>
-  <strong>Publish:</strong>
-  <%= @post.publish %>
-</p>
-
-<p>
-  <strong>Published date:</strong>
-  <%= @post.published_date %>
-</p>
-
-<p>
-  <strong>Author:</strong>
-  <%= @post.author %>
-</p>
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>

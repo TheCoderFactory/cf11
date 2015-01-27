@@ -1,0 +1,38 @@
+// Extends
+//--------------------------------------------
+
+%link-hover {
+  transition: 0.5s ease-out;
+  &:hover {
+    color: $dirty-gold;
+    border-color: $dirty-gold;
+  }
+}
+
+
+
+// Presentational
+//--------------------------------------------
+
+body {
+  font-family: $body-font;
+  font-size: 100%;
+  background: #112326;
+  font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $heading-font;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+a {
+  color: inherit;
+}
+
+p {
+  line-height: $line-height-base;
+}

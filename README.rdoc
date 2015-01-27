@@ -1,28 +1,29 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+To set up:
 
-Things you may want to cover:
+git clone 
 
-* Ruby version
+bundle
 
-* System dependencies
+rails g shoppe:setup
 
-* Configuration
+rails g nifty:key_value_store:migration
 
-* Database creation
+rake db:migrate
 
-* Database initialization
+rake db:seed
 
-* How to run the test suite
+rails s
 
-* Services (job queues, cache servers, search engines, etc.)
+Go to localhost:3000/store
+Login with admin@example.com/password
 
-* Deployment instructions
+Import courses:
+Go to Products - click on Import Products button
+Select WorkshopList.csv and upload
 
-* ...
+Import posts:
+Go to localhost:3000/posts - find the import upload
+Select all_posts.csv and upload
 
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.

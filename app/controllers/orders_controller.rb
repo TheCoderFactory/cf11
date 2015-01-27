@@ -121,25 +121,25 @@ class OrdersController < ApplicationController
         current_order.confirm!
         # This payment method should usually be called in a payment module or elsewhere but for the demo
         # we are adding a payment to the order straight away.
-        # current_order.payments.create(:method => "Credit Card", :amount => current_order.total, :reference => rand(10000) + 10000, :refundable => true)
+        current_order.payments.create(:method => "Credit Card", :amount => current_order.total, :reference => rand(10000) + 10000, :refundable => true)
         # Set your secret key: remember to change this to your live secret key in production
         # See your keys here https://dashboard.stripe.com/account
-        Stripe.api_key = "sk_test_lLqD3ovDSCZQHI8JO4Czposs"
+        # Stripe.api_key = "sk_test_lLqD3ovDSCZQHI8JO4Czposs"
 
-        # Get the credit card details submitted by the form
+        # # Get the credit card details submitted by the form
         # token = params[:stripeToken]
 
-        # Create a Customer
-        customer = Stripe::Customer.create(
-          :card => current_order.properties.values.first,
-          :description => current_order.email_address
-        )
+        # # Create a Customer
+        # customer = Stripe::Customer.create(
+        #   :card => current_order.properties.values.first,
+        #   :description => current_order.email_address
+        # )
 
         # Charge the Customer instead of the card
         Stripe::Charge.create(
             :amount => current_order.total.to_i * 100, # in cents
             :currency => "aud",
-            :customer => current_order.first_name + ' ' + current_order.last_name
+            :customer => current_order.properties.values.first
         )
 
         # # Save the customer ID in your database so you can use it later
@@ -154,7 +154,7 @@ class OrdersController < ApplicationController
         #   :customer => customer_id
         # )
         session[:order_id] = nil
-        redirect_to root_path, :notice => "Order has been placed!"
+        redirect_to thanks_path, :notice => "Your place in these courses have been booked!"
       rescue Shoppe::Errors::PaymentDeclined => e
         flash[:alert] = "Payment was declined by the bank. #{e.message}"
         redirect_to checkout_path
