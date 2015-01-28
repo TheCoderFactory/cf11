@@ -175,7 +175,6 @@ GEM
       daemon_controller (>= 1.2.0)
       rack
       rake (>= 0.8.1)
-    pg (0.18.1)
     polyamorous (1.1.0)
       activerecord (>= 3.0)
     quiet_assets (1.1.0)
@@ -312,7 +311,6 @@ DEPENDENCIES
   jquery-rails
   jquery-turbolinks
   passenger
-  pg
   quiet_assets
   rack-zippy
   rails (= 4.2.0)

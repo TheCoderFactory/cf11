@@ -1,11 +1,13 @@
 // Presentational
 //--------------------------------------------
 
+
 .main-nav {
   height: 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 0 10px;
 }
 
 .main-nav-list {
@@ -13,6 +15,9 @@
   display: flex;
   justify-content: space-between;
   width: 66%;
+  @media screen and (max-width: 800px) {
+    display: none;
+  }
 }
 
 .main-nav-item {
@@ -41,17 +46,6 @@
   width: 100px;
 }
 
-.main-nav-nested-item {
-  a {
-    color: $darknight;
-    border: 0;
-    padding: 0 0 0 5px;
-  }
-  &:hover {
-    color: $dirty-gold;
-  }
-}
-
 .logo {
   display: flex;
   align-items: center;
@@ -66,4 +60,38 @@
   font-weight: 300;
   font-family: $body-font;
   padding: 0 0 0 0.7em;
+}
+
+
+
+.mob-nav {
+  z-index: 1000;
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  @media screen and (min-width: 800px) {
+    display: none;
+  }
+  .btn-block {
+    width: 154px;
+    border-radius: 0%;
+    &:hover {
+      background: $darknight;
+    }
+  }
+  a {
+    text-decoration: none;
+    &:active {
+      color: $dirty-gold;
+    }
+  }
+}
+
+.mob-nav-list {
+  display: flex;
+  height: 210px;
+  flex-direction: column;
+  justify-content: space-around;
+  background: $calm;
+  padding: 15px;
 }

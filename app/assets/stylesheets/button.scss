@@ -43,3 +43,31 @@
     background: darken($light, 20);
   }
 }
+
+.btn-block-darknight {
+  color: $light;
+  background: $darknight;
+  transition: background 0.25s ease-in;
+  border-bottom: 2px solid darken($darknight, 20);
+  &:hover {
+    background: darken($darknight, 20);
+  }
+}
+
+.btn-block-dirtygold {
+  color: $light;
+  background: darken($dirty-gold, 5);
+  transition: background 0.25s ease-in;
+  border-bottom: 2px solid darken($dirty-gold, 20);
+  &:hover {
+    background: darken($dirty-gold, 25);
+  }
+}
+
+.btn-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  font-size: $font-size-medium;
+  font-weight: $font-weight-light;
+}
