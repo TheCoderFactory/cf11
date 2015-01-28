@@ -48,8 +48,19 @@
   color: $light;
   background: $darknight;
   transition: background 0.25s ease-in;
+  border-bottom: 2px solid darken($darknight, 20);
   &:hover {
     background: darken($darknight, 20);
+  }
+}
+
+.btn-block-dirtygold {
+  color: $light;
+  background: darken($dirty-gold, 5);
+  transition: background 0.25s ease-in;
+  border-bottom: 2px solid darken($dirty-gold, 20);
+  &:hover {
+    background: darken($dirty-gold, 25);
   }
 }
 

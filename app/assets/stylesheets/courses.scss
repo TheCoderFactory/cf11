@@ -20,7 +20,11 @@
 }
 
 .course-item-content {
-  width: 66%;
+  width: 75%;
+  @media screen and (min-width: 700px) {
+    width: 66%;
+  }
+
 }
 
 $course-logo-size: 60px;

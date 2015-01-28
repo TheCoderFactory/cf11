@@ -3,16 +3,24 @@
 
 .main-footer {
   color: $midnight-light;
-  font-size: 0.9em;
-  overflow: hidden;
-  clear: both;
   background: $midnight;
-  height: 350px;
+}
+
+.main-footer-wrapper {
   display: flex;
+  flex-direction: column-reverse;
+  @media screen and (min-width: 800px) {
+    flex-direction: row;
+  }
   align-items: center;
+  padding: 75px 30px;
+  @media screen and (min-width: 800px) {
+    max-width: 70%;
+  }
 }
 
 .main-footer-list {
+  flex-grow: 1;
   line-height: 1.8;
   position: relative;
   top: 20px;
@@ -20,11 +28,9 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-
-.main-footer-wrapper {
-  display: flex;
-  justify-content: space-around;
+  @media screen and (max-width: 800px) {
+    margin-top: 20px;
+  }
 }
 
 .main-footer-item {
@@ -40,7 +46,10 @@
 }
 
 .footer-mission-statement {
-  width: 40%;
+  width: 90%;
+  @media screen and (min-width: 700px) {
+    width: 50%;
+  }
   line-height: 1.4;
   .logo {
     font-size: $font-size-xlarge;
@@ -60,17 +69,17 @@
   overflow: hidden;
   a {
     display: block;
-    width: 24px;
-    height: 24px;
+    width: 30px;
+    height: 30px;
     text-indent: -40000px;
     opacity: 0.3;
-    background-size: 24px;
+    background-size: 30px;
     background-repeat: no-repeat;
     border-radius: 100%;
     &:hover {
       opacity: 1;
       background: $dirty-gold;
-      background-size: 24px;
+      background-size: 30px;
     }
   }
   .facebook a {

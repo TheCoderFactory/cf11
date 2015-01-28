@@ -12,6 +12,9 @@
   rgba(44, 62, 80, 0.75),
   rgba(44, 62, 80, 0)
   ), image-url('main-hero-compressor.jpg') $darknight no-repeat top center;
+  @media screen and (min-width: 1000px) {
+    background-attachment: fixed;
+  }
   background-size: cover;
   color: $light;
   size: 0.9em;
@@ -19,7 +22,7 @@
 
 .call-to-action-wrapper {
   width: 90%;
-  @media screen and (min-width: 550px) {
+  @media screen and (min-width: 600px) {
     width: 66%;
   }
   margin: 9% auto;
