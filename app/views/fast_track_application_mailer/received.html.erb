@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Fast Track Application received</h1>
+    	<p>
+    	  <strong>First name:</strong>
+    	  <%= @fast_track_application.first_name %>
+    	</p>
+
+    	<p>
+    	  <strong>Last name:</strong>
+    	  <%= @fast_track_application.last_name %>
+    	</p>
+
+    	<p>
+    	  <strong>Email:</strong>
+    	  <%= @fast_track_application.email %>
+    	</p>
+
+    	
+    	<p>
+    	  <strong>Country:</strong>
+    	  <%= @fast_track_application.country %>
+    	</p>
+
+    	<p>
+    	  <strong>City:</strong>
+    	  <%= @fast_track_application.city %>
+    	</p>
+
+    	<p>
+    	  <strong>Gender:</strong>
+    	  <%= @fast_track_application.gender %>
+    	</p>
+    	<p>
+    	  <strong>Age:</strong>
+    	  <%= @fast_track_application.age %>
+    	</p>
+    	<p>
+    	  <strong>Education:</strong>
+    	  <%= @fast_track_application.one_line %>
+    	</p>
+    	
+			<%= link_to 'Link to Fast Track application', fast_track_application_url(@fast_track_application) %>
+
+
+  </body>
+</html>

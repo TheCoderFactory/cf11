@@ -31,7 +31,8 @@ class ApplicationController < ActionController::Base
   end
 
   def promotion_value
-  	if @promotion.is_valid?
+
+  	if @promotion && @promotion.is_valid?
   		@promotion.value
   	else
   		0

@@ -4,10 +4,17 @@
 .main-header {
   height: 500px;
   overflow: hidden;
-  background: image-url('main-hero-compressor.jpg') $darknight no-repeat top center;
+  
   background-size: cover;
   color: $light;
   size: 0.9em;
+}
+
+.home-header {
+  background: image-url('main-hero-compressor.jpg') $darknight no-repeat top center;
+}
+.workshop-header {
+  background: image-url('accenture.png') $darknight no-repeat top center;
 }
 
 .call-to-action-wrapper {
