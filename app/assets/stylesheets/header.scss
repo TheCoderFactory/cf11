@@ -4,9 +4,14 @@
 .main-header {
   height: 350px;
   @media screen and (min-width: 550px) {
-    height: 500px;
+    height: 550px;
   }
   overflow: hidden;
+  background-size: cover;
+  color: $light;
+}
+
+.header-bg-home {
   background: linear-gradient(
   to bottom,
   rgba(44, 62, 80, 0.75),
@@ -15,9 +20,14 @@
   @media screen and (min-width: 1000px) {
     background-attachment: fixed;
   }
-  background-size: cover;
-  color: $light;
-  size: 0.9em;
+}
+
+.header-bg-courses {
+  background: $darknight;
+}
+
+.header-bg-blog {
+  background: $darknight;
 }
 
 .call-to-action-wrapper {
@@ -31,7 +41,7 @@
 
 .call-to-action-headline {
   text-transform: uppercase;
-  font-size: $font-size-xxlarge;
+  font-size: 10vw;
   @media screen and (min-width: 550px) {
     font-size: 70px;
   }
@@ -43,4 +53,7 @@
   font-weight: $font-weight-light;
   line-height: $line-height-base;
   margin: 2% auto;
+  @media screen and (max-width: 550px) {
+    display: none;
+  }
 }

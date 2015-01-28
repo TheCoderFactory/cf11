@@ -57,9 +57,22 @@
 	color: $darknight;
 }
 
+.course-select-wrapper {
 
+}
 
-
+.course-select-headline {
+	font-weight: $font-weight-base;
+	font-size: 60px;
+	line-height: $line-height-base;
+	@media screen and (min-width: 700px) {
+		font-size: 70px;
+		line-height: $line-height-base;
+	}
+	@media screen and (max-width: 550px) {
+		font-size: 40px;
+	}
+}
 
 
 

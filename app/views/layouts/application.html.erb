@@ -97,16 +97,30 @@
         </div>
         <% end %>
 
+        <% if @course_header %>
+        <div class="course-select-wrapper">
+          <h1 class="course-select-headline">I am a
+            <label for="ability" class="custom-select-arrow">
+              <select id="ability" class="input-select-feature">
+                <option selected>beginner</option>
+                <option>intermediate</option>
+                <option>advanced</option>
+              </select>
+            </label><br>
+            who wants to learn<br>
+            <span class="custom-select-arrow">
+              <select class="input-select-feature">
+                <option>ruby on rails</option>
+                <option selected>web design</option>
+                <option>wordpress</option>
+              </select>
+            </span><br>
+          </h1>
+        </div>
+        <% end %>
+
       </div>
 
-      <% if @full_header %>
-      <div class="bar">
-        <div class="main-row">
-          <p class="call">Call us on <b>01202 901 101</b> if you have any questions.</p>
-          <!-- <p class="offer"><b>This week only!</b> FREE next day shipping on all orders over &pound;30.</p> -->
-        </div>
-      </div>
-      <% end %>
 
     </header>
 

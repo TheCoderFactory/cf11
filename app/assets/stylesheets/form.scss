@@ -18,3 +18,22 @@
     width: 90%;
   }
 }
+
+.input-select-feature {
+  background: none;
+  color: rgba($light, 0.5);
+  text-decoration: underline;
+  font-family: $heading-font;
+  font-weight: $font-weight-base;
+  position: relative;
+  bottom: 6px;
+  // -webkit-appearance: none;
+}
+
+// .custom-select-arrow {
+//   &::after {
+//     content: image-url('icon-arrow.svg');
+//     display: inline-block;
+//     color: $dirty-gold;
+//   }
+// }
