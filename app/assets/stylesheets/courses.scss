@@ -6,45 +6,21 @@
 // Presentational
 //--------------------------------------------
 
-// ul.products {
-//   font-size:0.9em;
-//   margin:25px 0;
-//   overflow:hidden;
-//   li {
-//     margin-bottom:15px;
-//     width:50%;
-//     float:left;
-//     height:140px;
-//     div.img {
-//       background-repeat:no-repeat;
-//       background-size:contain;
-//       background-position: center 0;
-//       width:50%;
-//       height:120px	;
-//       float:left;
-//     }
-//     h4 {margin-left:50%; color:#216D74; font-size:1.1em; }
-//     h4 a { text-decoration:none;}
-//     h4 a:hover { text-decoration:underline;}
-//     p.info {margin-left:50%; margin:6px 0 10px 0; font-size:0.85em; line-height:1.7; color:#444;}
-//     p.buttons { float:right; margin-top:0;}
-//     p.buttons a { font-size:0.75em; font-weight:bold; background:#BEBEBE; color:$light; text-decoration:none; text-transform:uppercase; padding:3px 6px; border-radius:3px;}
-//     p.buttons a.add { background-color:#535353;}
-//     p.price {margin-left:50%; color:#222; font-size:1.0em; font-weight:bold;}
-//   }
-// }
-
 .course-list {
   width: 100%;
   display: flex;
   align-items: stretch;
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 1000px) {
     flex-wrap: wrap;
   }
+  @media screen and (max-width: 1300px) {
+    font-size: 0.95em;
+  }
+
 }
 
 .course-item-content {
-  width: 50%;
+  width: 66%;
 }
 
 $course-logo-size: 60px;
@@ -72,7 +48,7 @@ $course-logo-size: 60px;
     text-decoration: none;
   }
   .btn-block {
-    width: 150px;
+    width: 190px;
     margin: 0 auto;
     text-align: center;
   }

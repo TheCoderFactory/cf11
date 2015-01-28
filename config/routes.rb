@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Shoppe::Engine => "/shoppe"
   get 'thanks', to: 'thanks#index'
 
   get 'fast-track-application', to: 'fast_track_applications#new'
@@ -10,7 +11,6 @@ Rails.application.routes.draw do
 
   get 'fast-track', to: 'fast_track#index'
 
-  mount Shoppe::Engine => "/store"
   resources :posts do
     collection { post :import }
   end
@@ -53,7 +53,7 @@ Rails.application.routes.draw do
   post 'basket/:order_item_id' => 'orders#change_item_quantity', :as => 'adjust_basket_item_quantity'
   delete 'basket/:order_item_id' => 'orders#change_item_quantity'
   delete 'basket/delete/:order_item_id' => 'orders#remove_item', :as => 'remove_basket_item'
-  
+
   #
   # Checkout
   #

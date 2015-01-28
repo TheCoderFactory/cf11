@@ -103,6 +103,10 @@ button {
 	color: $light;
 	font-family: $body-font;
 	outline: none;
+	cursor: pointer;
+	&:active {
+		opacity: 0.5;
+	}
 }
 
 *, *:before, *:after {
