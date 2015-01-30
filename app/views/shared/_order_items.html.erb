@@ -69,7 +69,7 @@
       <tr class="subtotal">
         <td colspan="4">Total (excluding <%= Shoppe.settings.tax_name %>)</td>
         <td class="money">
-          <%= number_to_currency order.total_before_tax(promotion_value) %>
+          <%= number_to_currency order.total_before_tax %>
         </td>
       </tr>
     <tr class="tax">
@@ -77,13 +77,13 @@
         <%= Shoppe.settings.tax_name %>
       </td>
       <td class="money">
-        <%= number_to_currency order.tax(promotion_value) %>
+        <%= number_to_currency order.tax %>
       </td>
     </tr>
     <tr class="total">
       <td colspan="4">Total</td>
       <td class="money">
-        <%= number_to_currency order.total(promotion_value) %>
+        <%= number_to_currency order.total %>
       </td>
     </tr>
   </tfoot>

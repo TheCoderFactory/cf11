@@ -18,8 +18,8 @@ ds = Shoppe::DeliveryService.create!(:name => "Free Delivery", :code => 'FREE', 
 
 # categories
 cat1 = Shoppe::ProductCategory.create!(:name => 'Workshops')
-cat2 = Shoppe::ProductCategory.create!(:name => 'Courses')
-cat3 = Shoppe::ProductCategory.create!(:name => 'Kits')
+cat2 = Shoppe::ProductCategory.create!(:name => 'Full Time Courses')
+cat3 = Shoppe::ProductCategory.create!(:name => 'Part Time Courses')
 
 # Locations
 Shoppe::Location.create!(name: 'Coder Factory HQ', city: 'Sydney', street: '91 Campbell Street', suburb: 'Surry Hills')
