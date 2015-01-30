@@ -36,18 +36,21 @@
 
 .call-to-action-wrapper {
   width: 90%;
-  @media screen and (min-width: 600px) {
-    width: 66%;
+  height: 100%;
+  margin: 20% auto;
+
+  @media screen and (min-width: 750px) {
+    margin: 9% auto;
+
   }
-  margin: 9% auto;
 
 }
 
 .call-to-action-headline {
   text-transform: uppercase;
-  font-size: 10vw;
-  @media screen and (min-width: 550px) {
-    font-size: 70px;
+  font-size: 9vw;
+  @media screen and (min-width: 950px) {
+    font-size: 90px;
   }
   margin: 0;
   line-height: $line-height-tight;
@@ -56,7 +59,8 @@
 .call-to-action-info {
   font-weight: $font-weight-light;
   line-height: $line-height-base;
-  margin: 2% auto;
+  margin: 2% 0 0;
+  width: 66%;
   @media screen and (max-width: 550px) {
     display: none;
   }

@@ -79,11 +79,14 @@ $course-logo-size: 60px;
 .course-list-divider {
   width: 100%;
   background: $subtle;
-  line-height: 100px;
   padding: 0 0 0 5%;
-  margin: 0;
   height: 100px;
   color: $midnight;
+  h2 {
+    display: inline-block;
+    line-height: 100px;
+    margin: 0 5px 0;
+  }
 }
 
 .all-courses-item {
