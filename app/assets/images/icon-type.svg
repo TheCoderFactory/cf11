@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="37px" height="37px" viewBox="0 0 37 37" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
+    <title>Paragraph</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Wireframes" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Artboard-5" sketch:type="MSArtboardGroup" transform="translate(-193.000000, -674.000000)" fill="#DBC034">
+            <g id="Group" sketch:type="MSLayerGroup" transform="translate(0.000000, 452.000000)">
+                <g transform="translate(0.000000, 144.000000)" id="ages-+-Paragraph" sketch:type="MSShapeGroup">
+                    <g transform="translate(179.000000, 63.000000)">
+                        <g id="Paragraph" transform="translate(13.537708, 14.449555)">
+                            <path d="M11.270519,0.900345532 C5.55572961,0.900345532 0.905125683,5.56988514 0.905125683,11.3092909 C0.905125683,17.0496434 5.55572961,21.7182362 11.270519,21.7182362 L17.9368264,21.7182362 L17.9368264,34.9845763 C17.9368264,36.029826 18.7841983,36.8781446 19.8303948,36.8781446 C20.8756445,36.8781446 21.7239632,36.029826 21.7239632,34.9845763 L21.7239632,4.68748228 L25.5205678,4.68748228 L25.5205678,34.9845763 C25.5205678,36.029826 26.3688864,36.8781446 27.4141361,36.8781446 C28.4603327,36.8781446 29.3077045,36.029826 29.3077045,34.9845763 L29.3077045,4.68748228 L34.9893564,4.68748228 C36.0355529,4.68748228 36.8829248,3.83916365 36.8829248,2.79391391 C36.8829248,1.74771738 36.0355529,0.900345532 34.9893564,0.900345532 L11.270519,0.900345532 Z"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -6,6 +6,8 @@
 // Presentational
 //--------------------------------------------
 
+// Courses Grid
+
 .course-list {
   width: 100%;
   display: flex;
@@ -68,4 +70,141 @@ $course-logo-size: 60px;
 .course-item-info {
   font-weight: $font-weight-light;
   margin: 20px auto;
+}
+
+
+
+// Courses List
+
+.course-list-divider {
+  width: 100%;
+  background: $subtle;
+  line-height: 100px;
+  padding: 0 0 0 5%;
+  margin: 0;
+  height: 100px;
+  color: $midnight;
+}
+
+.all-courses-item {
+  width: 100%;
+  margin: 0 0 150px;
+  @media screen and (min-width: 700px) {
+    margin-bottom: 300px;
+  }
+  .btn-block {
+    float: right;
+  }
+}
+
+.all-courses-header {
+  color: $light;
+  padding: 20px 0;
+}
+
+.all-courses-icon {
+  width: 50px;
+  height: 50px;
+  padding: 7px;
+  position: relative;
+  top: 6px;
+  margin: 0 5% 0 0;
+  background: $light;
+  border-radius: 100%;
+  display: none;
+}
+
+.all-courses-headline {
+  font-weight: $font-weight-base;
+  margin: 0 0 12px 0;
+  display: inline-block;
+}
+
+.all-courses-summary {
+  color: $midnight;
+  font-weight: $font-weight-light;
+  margin: 4% 0 8%;
+  max-width: 100%;
+  @media screen and (min-width: 550px) {
+    max-width: 85%;
+    margin: 2% 0 4%;
+  }
+}
+
+.all-courses-time {
+  font-size: $font-size-xlarge;
+  font-family: $heading-font;
+  opacity: 0.9;
+  transition: 0.5 ease-in;
+  cursor: pointer;
+}
+
+.all-courses-level {
+  display: inline-block;
+  font-family: $heading-font;
+  font-weight: $font-weight-base;
+  font-weight: $font-weight-light;
+  text-decoration: underline;
+  float: right;
+  margin: 0;
+  @media screen and (max-width: 545px) and (min-width: 435px){
+    display: none;
+  }
+}
+
+.all-courses-skills {
+  display: flex;
+  width: 66%;
+  justify-content: space-between;
+  @media screen and (max-width: 900px) {
+    display: none;
+  }
+}
+
+.all-courses-skill {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: darken($dirty-gold, 10);
+  cursor: pointer;
+  img:hover + p {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  p {
+    margin: 10px 0 0;
+    transform: translateY(30px);
+    opacity: 0;
+    transition: .3s ease-in;
+  }
+}
+
+
+
+// Courses List Dynamic Classes
+.workshop-header-bg {
+  background: $slime;
+  border-bottom: 3px solid darken($slime, 15);
+}
+
+.parttime-header-bg {
+  background: $burntsea;
+  border-bottom: 3px solid darken($burntsea, 15);
+}
+
+.fulltime-header-bg {
+  background: $darknight;
+  border-bottom: 3px solid darken($darknight, 15);
+}
+
+.workshop-level {
+  color: darken($slime, 20);
+}
+
+.parttime-level {
+  color: darken($burntsea, 20);
+}
+
+.fulltime-level {
+  color: darken($darknight, 20);
 }

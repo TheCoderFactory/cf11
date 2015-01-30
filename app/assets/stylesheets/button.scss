@@ -1,14 +1,20 @@
 // Directives
 //--------------------------------------------
 
-// $colors: $light $darknight $midnight $midnight-light $dirty-gold $calm $subtle;
-//
-// @each $color in $colors {
-//   .btn-block-#{$color} {
-//     // border-bottom: 2px solid darken(#{$color}, 20);
-//     background: #{$color};
-//   }
-// }
+
+
+// Mixins
+//--------------------------------------------
+
+@mixin btnBlockBg($bg-color, $font-colour: $light) {
+  color: $font-colour;
+  background: $bg-color;
+  border-bottom: 2px solid darken($bg-color, 20);
+  &:hover {
+    background: darken($bg-color, 20);
+  }
+}
+
 
 
 // Presentational
@@ -19,6 +25,7 @@
   border-radius: 7px;
   font-size: $font-size-medium;
   font-weight: $font-weight-light;
+  transition: background 0.25s ease-in;
   cursor: pointer;
   &:active {
     opacity: 0.5;
@@ -26,42 +33,27 @@
 }
 
 .btn-block-calm {
-  background: $calm;
-  transition: background 0.25s ease-in;
-  border-bottom: 2px solid darken($calm, 20);
-  &:hover {
-    background: darken($calm, 20);
-  }
+  @include btnBlockBg($calm);
 }
 
 .btn-block-light {
-  color: $midnight;
-  background: $light;
-  transition: background 0.25s ease-in;
-  border-bottom: 2px solid darken($light, 20);
-  &:hover {
-    background: darken($light, 20);
-  }
+  @include btnBlockBg($light, $midnight);
 }
 
 .btn-block-darknight {
-  color: $light;
-  background: $darknight;
-  transition: background 0.25s ease-in;
-  border-bottom: 2px solid darken($darknight, 20);
-  &:hover {
-    background: darken($darknight, 20);
-  }
+  @include btnBlockBg($darknight);
 }
 
 .btn-block-dirtygold {
-  color: $light;
-  background: darken($dirty-gold, 5);
-  transition: background 0.25s ease-in;
-  border-bottom: 2px solid darken($dirty-gold, 20);
-  &:hover {
-    background: darken($dirty-gold, 25);
-  }
+  @include btnBlockBg($dirty-gold);
+}
+
+.btn-block-slime {
+  @include btnBlockBg($slime);
+}
+
+.btn-block-burtnsea {
+  @include btnBlockBg($burntsea);
 }
 
 .btn-circle {

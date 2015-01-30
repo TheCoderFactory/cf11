@@ -98,6 +98,10 @@ input {
 	font-family: $body-font;
 }
 
+a {
+	text-decoration: none;
+}
+
 button {
 	border: none;
 	color: $light;

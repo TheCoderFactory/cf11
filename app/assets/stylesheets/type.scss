@@ -16,8 +16,7 @@
 
 body {
   font-family: $body-font;
-  font-size: 100%;
-  background: #112326;
+  font-size: 1em;
   font-smoothing: antialiased;
 }
 
@@ -26,13 +25,34 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 3em;
+  font-size: $font-size-xxxlarge;
+}
+
+h2 {
+  font-size: $font-size-xxlarge;
+}
+
+h3 {
+  font-size: $font-size-xlarge;
+}
+
+h4 {
+  font-size: $font-size-large;
+}
+
+h5 {
+  font-size: $font-size-medium;
+}
+
+h6 {
+  font-size: $font-size-small;
+}
+
+p {
+  font-size: $font-size-medium;
+  line-height: $line-height-base;
 }
 
 a {
   color: inherit;
-}
-
-p {
-  line-height: $line-height-base;
 }

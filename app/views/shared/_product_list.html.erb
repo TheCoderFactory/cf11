@@ -1,22 +1,51 @@
-<ul class="products">
+<ul class="all-courses-list" ng-controller="CourseList as courseList">
   <% for product in products.includes(:product_category) %>
-    <li>
-      <div class="img" style="background-image:url(<%= asset_path product.default_image %>)"></div>
-      <h4>
-        <%= link_to product.name, product_path(product.product_category.permalink, product.permalink) %>
-      </h4>
-      <p class="info">
-        <%= truncate product.short_description, :length => 90 %>
-      </p>
-      <p class="buttons">
-        <%= link_to "Info", product_path(product.product_category.permalink, product.permalink) %>
-        <% if product.orderable? %>
-          <%= link_to "Add", buy_product_path(product.product_category.permalink, product.permalink), :class => 'add', :method => :post %>
-        <% end %>
-      </p>
-      <p class="price">
-        <%= number_to_currency(product.price * 1.1) %> (incl. GST)
-      </p>
+    <li class="all-courses-item">
+      <header class="all-courses-header workshop-header-bg">
+        <div class="main-row">
+          <img src="<%= asset_path 'html-code-slime.svg' %>" class="all-courses-icon" />
+          <h1 class="all-courses-headline">
+            Web Design
+            <!-- <%= link_to product.name, product_path(product.product_category.permalink, product.permalink) %> -->
+          </h1><br>
+          <time class="all-courses-time" ng-click="courseList.showFollowingWeek = true" ng-hide="courseList.showFollowingWeek">Next Class: 17-18th Feb (Weekend)</time>
+          <time class="all-courses-time" ng-click="courseList.showFollowingWeek = false" ng-show="courseList.showFollowingWeek">Class After That: 12-13th March (Weekend)</time>
+          <h3 class="all-courses-level workshop-level">Beginner</h3>
+        </div>
+      </header>
+      <div class="main-row">
+        <p class="all-courses-summary">
+          Get creative with web design. Learn how to make beautiful websites. This short course form gives you a fast paced but enjoyable taste of web design. You'll learn the words the kids are using like UX, UI, Development. Anyone can do it!
+          <!-- <%= truncate product.short_description, :length => 90 %> -->
+        </p>
+        <div class="all-courses-skills">
+          <div class="all-courses-skill">
+            <img src="<%= asset_path 'icon-brush.svg' %>"/>
+            <p>Visual Design</p>
+          </div>
+          <div class="all-courses-skill">
+            <img src="<%= asset_path 'icon-type.svg' %>"/>
+            <p>Design Fundamentals</p>
+          </div>
+          <div class="all-courses-skill">
+            <img src="<%= asset_path 'icon-flow-chart.svg' %>"/>
+            <p>User Experience</p>
+          </div>
+          <div class="all-courses-skill">
+            <img src="<%= asset_path 'icon-html-code.svg' %>"/>
+            <p>Front End Design</p>
+          </div>
+        </div>
+        <p class="btn-block btn-block-slime">
+          <%= link_to "More Details", product_path(product.product_category.permalink, product.permalink) %>
+          <!-- <% if product.orderable? %>
+            <%= link_to "Add", buy_product_path(product.product_category.permalink, product.permalink), :class => 'add', :method => :post %>
+          <% end %> -->
+        </p>
+        <!-- <p class="price">
+          <%= number_to_currency(product.price * 1.1) %> (incl. GST)
+        </p> -->
+    </div>
     </li>
   <% end %>
 </ul>

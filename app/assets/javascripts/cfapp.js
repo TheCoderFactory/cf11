@@ -18,4 +18,9 @@ angular.module('CoderFactory', ['ngAnimate'])
       nav.menu = 'Menu';
     }
   }
+})
+
+.controller('CourseList', function() {
+  var courseList = this;
+
 });
