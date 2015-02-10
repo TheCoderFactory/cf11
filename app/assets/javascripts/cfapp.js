@@ -20,7 +20,29 @@ angular.module('CoderFactory', ['ngAnimate'])
   }
 })
 
-.controller('CourseList', function() {
+.controller('CourseListCtrl', function() {
   var courseList = this;
+
+  // variables
+  courseList.showWorkshops = true;
+  courseList.showPtCourses = true;
+  courseList.showFtCourses = true;
+
+  // methods
+  courseList.toggleWorkshops = toggleWorkshops;
+  courseList.togglePtCourses = togglePtCourses;
+  courseList.toggleFtCourses = toggleFtCourses;
+
+  function toggleWorkshops() {
+    courseList.showWorkshops = !courseList.showWorkshops;
+  }
+
+  function togglePtCourses() {
+    courseList.showPtCourses = !courseList.showPtCourses;
+  }
+
+  function toggleFtCourses() {
+    courseList.showFtCourses = !courseList.showFtCourses;
+  }
 
 });

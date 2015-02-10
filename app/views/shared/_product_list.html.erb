@@ -1,6 +1,6 @@
-<ul class="all-courses-list" ng-controller="CourseList as courseList">
+<ul class="all-courses-list">
   <% for product in products.includes(:product_category) %>
-    <li class="all-courses-item">
+    <li class="all-courses-item" ng-if="courseList.showWorkshops">
       <header class="all-courses-header workshop-header-bg">
         <div class="main-row">
           <img src="<%= asset_path 'html-code-slime.svg' %>" class="all-courses-icon" />

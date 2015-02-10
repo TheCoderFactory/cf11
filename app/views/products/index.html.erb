@@ -1,9 +1,14 @@
 <% active_nav_item :catalogue %>
 <% @page_title = @product_category.name %>
-<div class="">
-  <h2 class="course-list-divider">
-    <%= @product_category.name %>
-  </h2>
+<div ng-controller="CourseListCtrl as courseList">
+  <div class="course-list-divider">
+    <h2>
+      <%= @product_category.name %>
+    </h2>
+    <button class="btn-clear btn-dropdown" ng-click="courseList.toggleWorkshops()">
+      <img src="<%= asset_path 'btn-play.svg' %>" />
+    </button>
+  </div>
   <% unless @product_category.description.blank? %>
     <p class="intro">
       <%= @product_category.description %>
