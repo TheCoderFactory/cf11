@@ -71,5 +71,14 @@
 
 .btn-clear {
   background: none;
+}
 
+.btn-dropdown {
+  width: 25px;
+  transform: rotate(90deg);
+  display: inline-block;
+}
+
+.btn-dropdown--up {
+  transform: rotate(-90deg);
 }

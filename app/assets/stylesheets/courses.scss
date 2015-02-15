@@ -86,8 +86,18 @@ $course-logo-size: 60px;
     display: inline-block;
     line-height: 100px;
     margin: 0 5px 0;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
+
+// .divider-headline {
+//   text-decoration: underline;
+// }
 
 .all-courses-item {
   width: 100%;

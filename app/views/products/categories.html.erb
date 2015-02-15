@@ -1,20 +1,307 @@
-<% active_nav_item :catalogue %>
-<% @page_title = 'Catalogue' %>
 <% @course_header = true %>
-<div class="categories">
-  <ul>
-    <% for category in @product_categories %>
-      <li>
-        <!-- <div class="img" style="<%# category.image ? 'background-image:url(' + category.image.path + ' )' : 'background-color:#efefef' %>"></div> -->
-        <div class="space">
-          <h4>
-            <%= link_to category.name, products_path(category.permalink) %>
-          </h4>
-          <p>
-            <%= category.description %>
-          </p>
+  <div class="course-list-divider">
+    <h2 ng-class="{ 'divider-headline' : courseList.showWorkshopCourses }" ng-click="courseList.toggleWorkshops()">
+      Weekend Workshop
+    </h2>
+  </div>
+
+  <ul class="all-courses-list" ng-if="courseList.showWorkshops && (courseList.syd || courseList.mel || courseList.bns)">
+
+    <li class="all-courses-item" ng-if="courseList.webDesign">
+      <header class="all-courses-header workshop-header-bg">
+        <div class="main-row">
+          <img src="<%= asset_path 'html-code-slime.svg' %>" class="all-courses-icon" />
+          <h1 class="all-courses-headline">
+            Web Design
+          </h1><br>
+          <time class="all-courses-time" ng-click="courseList.showFollowingWeek = true" ng-hide="courseList.showFollowingWeek">Next Class: 17-18th Feb (Weekend)</time>
+          <time class="all-courses-time" ng-click="courseList.showFollowingWeek = false" ng-show="courseList.showFollowingWeek">Class After That: 12-13th March (Weekend)</time>
+          <h3 class="all-courses-level workshop-level">Beginner</h3>
         </div>
-      </li>
-    <% end %>
+      </header>
+      <div class="main-row">
+        <p class="all-courses-summary">
+          Get creative with web design. Learn how to make beautiful websites. This short course form gives you a fast paced but enjoyable taste of web design. You'll learn the words the kids are using like UX, UI, Development. Anyone can do it!
+        </p>
+        <div class="all-courses-skills">
+          <div class="all-courses-skill">
+            <img src="<%= asset_path 'icon-brush.svg' %>"/>
+            <p>Visual Design</p>
+          </div>
+          <div class="all-courses-skill">
+            <img src="<%= asset_path 'icon-type.svg' %>"/>
+            <p>Design Fundamentals</p>
+          </div>
+          <div class="all-courses-skill">
+            <img src="<%= asset_path 'icon-flow-chart.svg' %>"/>
+            <p>User Experience</p>
+          </div>
+          <div class="all-courses-skill">
+            <img src="<%= asset_path 'icon-html-code.svg' %>"/>
+            <p>Front End Design</p>
+          </div>
+        </div>
+        <a class="btn-block btn-block-slime" href="">
+          More Info
+        </a>
+      </div>
+    </li>
+
+    <li class="all-courses-item" ng-if="courseList.ror">
+      <header class="all-courses-header workshop-header-bg">
+        <div class="main-row">
+          <img src="<%= asset_path 'html-code-slime.svg' %>" class="all-courses-icon" />
+          <h1 class="all-courses-headline">
+            Learn to Code
+          </h1><br>
+          <time class="all-courses-time" ng-click="courseList.showFollowingWeek = true" ng-hide="courseList.showFollowingWeek">Next Class: 17-18th Feb (Weekend)</time>
+          <time class="all-courses-time" ng-click="courseList.showFollowingWeek = false" ng-show="courseList.showFollowingWeek">Class After That: 12-13th March (Weekend)</time>
+          <h3 class="all-courses-level workshop-level">Beginner</h3>
+        </div>
+      </header>
+      <div class="main-row">
+        <p class="all-courses-summary">
+          Get creative with web design. Learn how to make beautiful websites.
+        </p>
+        <div class="all-courses-skills">
+          <div class="all-courses-skill">
+            <img src="<%= asset_path 'icon-brush.svg' %>"/>
+            <p>Visual Design</p>
+          </div>
+          <div class="all-courses-skill">
+            <img src="<%= asset_path 'icon-type.svg' %>"/>
+            <p>Design Fundamentals</p>
+          </div>
+          <div class="all-courses-skill">
+            <img src="<%= asset_path 'icon-flow-chart.svg' %>"/>
+            <p>User Experience</p>
+          </div>
+          <div class="all-courses-skill">
+            <img src="<%= asset_path 'icon-html-code.svg' %>"/>
+            <p>Front End Design</p>
+          </div>
+        </div>
+        <a class="btn-block btn-block-slime" href="">
+          More Info
+        </a>
+      </div>
+    </li>
+
+    <li class="all-courses-item" ng-if="courseList.wordpress && courseList.syd">
+      <header class="all-courses-header workshop-header-bg">
+        <div class="main-row">
+          <img src="<%= asset_path 'html-code-slime.svg' %>" class="all-courses-icon" />
+          <h1 class="all-courses-headline">
+            Wordpress
+          </h1><br>
+          <time class="all-courses-time" ng-click="courseList.showFollowingWeek = true" ng-hide="courseList.showFollowingWeek">Next Class: 17-18th Feb (Weekend)</time>
+          <time class="all-courses-time" ng-click="courseList.showFollowingWeek = false" ng-show="courseList.showFollowingWeek">Class After That: 12-13th March (Weekend)</time>
+          <h3 class="all-courses-level workshop-level">Beginner</h3>
+        </div>
+      </header>
+      <div class="main-row">
+        <p class="all-courses-summary">
+          Build your own Wordpress site for fun or profit.
+        </p>
+        <div class="all-courses-skills">
+          <div class="all-courses-skill">
+            <img src="<%= asset_path 'icon-brush.svg' %>"/>
+            <p>Visual Design</p>
+          </div>
+          <div class="all-courses-skill">
+            <img src="<%= asset_path 'icon-type.svg' %>"/>
+            <p>Design Fundamentals</p>
+          </div>
+          <div class="all-courses-skill">
+            <img src="<%= asset_path 'icon-flow-chart.svg' %>"/>
+            <p>User Experience</p>
+          </div>
+          <div class="all-courses-skill">
+            <img src="<%= asset_path 'icon-html-code.svg' %>"/>
+            <p>Front End Design</p>
+          </div>
+        </div>
+        <a class="btn-block btn-block-slime" href="">
+          More Info
+        </a>
+      </div>
+    </li>
+
+    <li class="all-courses-item" ng-if="(courseList.ror || courseList.tech) && (courseList.syd || courseList.mel || courseList.bns)">
+      <header class="all-courses-header workshop-header-bg">
+        <div class="main-row">
+          <img src="<%= asset_path 'html-code-slime.svg' %>" class="all-courses-icon" />
+          <h1 class="all-courses-headline">
+            Learn To Code For Highschoolers
+          </h1><br>
+          <time class="all-courses-time" ng-click="courseList.showFollowingWeek = true" ng-hide="courseList.showFollowingWeek">Next Class: 17-18th Feb (Weekend)</time>
+          <time class="all-courses-time" ng-click="courseList.showFollowingWeek = false" ng-show="courseList.showFollowingWeek">Class After That: 12-13th March (Weekend)</time>
+          <h3 class="all-courses-level workshop-level">Beginner</h3>
+        </div>
+      </header>
+      <div class="main-row">
+        <p class="all-courses-summary">
+          Learn to Code for highschoolers.
+        </p>
+        <div class="all-courses-skills">
+          <div class="all-courses-skill">
+            <img src="<%= asset_path 'icon-brush.svg' %>"/>
+            <p>Visual Design</p>
+          </div>
+          <div class="all-courses-skill">
+            <img src="<%= asset_path 'icon-type.svg' %>"/>
+            <p>Design Fundamentals</p>
+          </div>
+          <div class="all-courses-skill">
+            <img src="<%= asset_path 'icon-flow-chart.svg' %>"/>
+            <p>User Experience</p>
+          </div>
+          <div class="all-courses-skill">
+            <img src="<%= asset_path 'icon-html-code.svg' %>"/>
+            <p>Front End Design</p>
+          </div>
+        </div>
+        <a class="btn-block btn-block-slime" href="">
+          More Info
+        </a>
+      </div>
+    </li>
+
+    <li class="all-courses-item" ng-if="(courseList.ror || courseList.tech) && courseList.syd">
+      <header class="all-courses-header workshop-header-bg">
+        <div class="main-row">
+          <img src="<%= asset_path 'html-code-slime.svg' %>" class="all-courses-icon" />
+          <h1 class="all-courses-headline">
+            Technology for Teachers
+          </h1><br>
+          <time class="all-courses-time" ng-click="courseList.showFollowingWeek = true" ng-hide="courseList.showFollowingWeek">Next Class: 17-18th Feb (Weekend)</time>
+          <time class="all-courses-time" ng-click="courseList.showFollowingWeek = false" ng-show="courseList.showFollowingWeek">Class After That: 12-13th March (Weekend)</time>
+          <h3 class="all-courses-level workshop-level">Beginner</h3>
+        </div>
+      </header>
+      <div class="main-row">
+        <p class="all-courses-summary">
+          Keep up with your students! And learn how to excite them with tech of the future.
+        </p>
+        <div class="all-courses-skills">
+          <div class="all-courses-skill">
+            <img src="<%= asset_path 'icon-brush.svg' %>"/>
+            <p>Visual Design</p>
+          </div>
+          <div class="all-courses-skill">
+            <img src="<%= asset_path 'icon-type.svg' %>"/>
+            <p>Design Fundamentals</p>
+          </div>
+          <div class="all-courses-skill">
+            <img src="<%= asset_path 'icon-flow-chart.svg' %>"/>
+            <p>User Experience</p>
+          </div>
+          <div class="all-courses-skill">
+            <img src="<%= asset_path 'icon-html-code.svg' %>"/>
+            <p>Front End Design</p>
+          </div>
+        </div>
+        <a class="btn-block btn-block-slime" href="">
+          More Info
+        </a>
+      </div>
+    </li>
+
   </ul>
-</div>
+
+  <div class="course-list-divider">
+    <h2 ng-class="{ 'divider-headline' : !courseList.showPtCourse }" ng-click="courseList.togglePtCourses()">
+      Part Time Courses
+    </h2>
+  </div>
+
+  <ul class="all-courses-list" ng-if="courseList.showPtCourses">
+    <li class="all-courses-item" ng-if="(courseList.ror || courseList.webDesign) && courseList.syd">
+      <header class="all-courses-header parttime-header-bg">
+        <div class="main-row">
+          <img src="<%= asset_path 'html-code-slime.svg' %>" class="all-courses-icon" />
+          <h1 class="all-courses-headline">
+            Web App Developer
+          </h1><br>
+          <time class="all-courses-time" ng-click="courseList.showFollowingWeek = true" ng-hide="courseList.showFollowingWeek">Next Class: 17-18th Feb (Weekend)</time>
+          <time class="all-courses-time" ng-click="courseList.showFollowingWeek = false" ng-show="courseList.showFollowingWeek">Class After That: 12-13th March (Weekend)</time>
+          <h3 class="all-courses-level parttime-level">Beginner</h3>
+        </div>
+      </header>
+      <div class="main-row">
+        <p class="all-courses-summary">
+          Learn web app development while keeping your day job.
+        </p>
+        <div class="all-courses-skills">
+          <div class="all-courses-skill">
+            <img src="<%= asset_path 'icon-brush.svg' %>"/>
+            <p>Visual Design</p>
+          </div>
+          <div class="all-courses-skill">
+            <img src="<%= asset_path 'icon-type.svg' %>"/>
+            <p>Design Fundamentals</p>
+          </div>
+          <div class="all-courses-skill">
+            <img src="<%= asset_path 'icon-flow-chart.svg' %>"/>
+            <p>User Experience</p>
+          </div>
+          <div class="all-courses-skill">
+            <img src="<%= asset_path 'icon-html-code.svg' %>"/>
+            <p>Front End Design</p>
+          </div>
+        </div>
+        <a class="btn-block btn-block-burtnsea" href="">
+          More Info
+        </a>
+      </div>
+    </li>
+  </ul>
+
+  <div class="course-list-divider">
+    <h2 ng-click="courseList.toggleFtCourses()" ng-class="{ 'divider-headline' : !courseList.showPtCourse }">
+      Full Time Courses
+      <!-- <img src="<%= asset_path 'btn-play.svg' %>" /> -->
+    </h2>
+  </div>
+
+  <ul class="all-courses-list" ng-if="courseList.showFtCourses">
+    <li class="all-courses-item" ng-if="(courseList.ror || courseList.webDesign) && courseList.syd">
+      <header class="all-courses-header fulltime-header-bg">
+        <div class="main-row">
+          <img src="<%= asset_path 'html-code-slime.svg' %>" class="all-courses-icon" />
+          <h1 class="all-courses-headline">
+            Fast Track
+          </h1><br>
+          <time class="all-courses-time" ng-click="courseList.showFollowingWeek = true" ng-hide="courseList.showFollowingWeek">Next Class: 17-18th Feb (Weekend)</time>
+          <time class="all-courses-time" ng-click="courseList.showFollowingWeek = false" ng-show="courseList.showFollowingWeek">Class After That: 12-13th March (Weekend)</time>
+          <h3 class="all-courses-level fulltime-level">Beginner</h3>
+        </div>
+      </header>
+      <div class="main-row">
+        <p class="all-courses-summary">
+          Your boarding pass to the exciting world of high tech.
+        </p>
+        <div class="all-courses-skills">
+          <div class="all-courses-skill">
+            <img src="<%= asset_path 'icon-brush.svg' %>"/>
+            <p>Visual Design</p>
+          </div>
+          <div class="all-courses-skill">
+            <img src="<%= asset_path 'icon-type.svg' %>"/>
+            <p>Design Fundamentals</p>
+          </div>
+          <div class="all-courses-skill">
+            <img src="<%= asset_path 'icon-flow-chart.svg' %>"/>
+            <p>User Experience</p>
+          </div>
+          <div class="all-courses-skill">
+            <img src="<%= asset_path 'icon-html-code.svg' %>"/>
+            <p>Front End Design</p>
+          </div>
+        </div>
+        <a class="btn-block btn-block-darknight" href="">
+          More Info
+        </a>
+      </div>
+    </li>
+  </ul>
