@@ -20,30 +20,23 @@ angular.module('CoderFactory', ['ngAnimate'])
   }
 })
 
-.controller('CourseListCtrl', function() {
+.controller('CourseListCtrl', function(CoursesService) {
   var courseList = this;
 
   // variables
   courseList.showWorkshops = true;
   courseList.showPtCourses = true;
   courseList.showFtCourses = true;
-
-  courseList.webDesign     = true;
-  courseList.ror           = true;
-  courseList.wordpress     = true;
-  courseList.tech          = true;
-  courseList.syd           = true;
-  courseList.mel           = true;
-  courseList.bns           = true;
-  courseList.ade           = true;
-  courseList.perth         = true;
+  courseList.allCourses    = CoursesService.allCourses;
+  courseList.usersLocation = window.localStorage.usersLocation || 'Sydney';
+  courseList.usersInterest = window.localStorage.usersInterest || 'how to code';
 
   // methods
   courseList.toggleWorkshops = toggleWorkshops;
   courseList.togglePtCourses = togglePtCourses;
   courseList.toggleFtCourses = toggleFtCourses;
-  courseList.slcIntChanged   = slcIntChanged;
-  courseList.slcLocChanged   = slcLocChanged;
+  courseList.locationChanged = locationChanged;
+  courseList.interestChanged = interestChanged;
 
   function toggleWorkshops() {
     courseList.showWorkshops = !courseList.showWorkshops;
@@ -57,72 +50,14 @@ angular.module('CoderFactory', ['ngAnimate'])
     courseList.showFtCourses = !courseList.showFtCourses;
   }
 
-  function slcIntChanged(newVal) {
+  function locationChanged(newVal) {
     console.log(newVal);
-    courseList.showWorkshops = true;
-    courseList.showPtCourses = true;
-    courseList.showFtCourses = true;
-    if(newVal === 'web design') {
-      courseList.webDesign = true;
-      courseList.ror = false;
-      courseList.wordpress = false;
-      courseList.tech = false;
-    } else if(newVal === 'wordpress') {
-      courseList.webDesign = false;
-      courseList.ror = false;
-      courseList.wordpress = true;
-      courseList.tech = false;
-    } else if(newVal === 'technology') {
-      courseList.webDesign = false;
-      courseList.ror = false;
-      courseList.wordpress = false;
-      courseList.tech = true;
-    } else if(newVal === 'ruby on rails') {
-      courseList.webDesign = false;
-      courseList.ror = true;
-      courseList.wordpress = false;
-      courseList.tech = false;
-    } else if(newVal === 'how to code') {
-    courseList.webDesign = true;
-    courseList.ror = true;
-    courseList.wordpress = true;
-    courseList.tech = true;
-    }
+    window.localStorage.usersLocation = newVal;
   }
 
-  function slcLocChanged(newVal) {
+  function interestChanged(newVal) {
     console.log(newVal);
-    if(newVal === 'Melbourne') {
-      courseList.syd           = false;
-      courseList.mel           = true;
-      courseList.bns           = false;
-      courseList.ade           = false;
-      courseList.perth         = false;
-    } else if(newVal === 'Sydney') {
-      courseList.syd           = true;
-      courseList.mel           = false;
-      courseList.bns           = false;
-      courseList.ade           = false;
-      courseList.perth         = false;
-    } else if(newVal === 'Adelaide') {
-      courseList.syd           = false;
-      courseList.mel           = false;
-      courseList.bns           = false;
-      courseList.ade           = true;
-      courseList.perth         = false;
-    } else if(newVal === 'Perth') {
-      courseList.syd           = false;
-      courseList.mel           = false;
-      courseList.bns           = false;
-      courseList.ade           = false;
-      courseList.perth         = true;
-    } else if(newVal === 'Brisbane') {
-      courseList.syd           = false;
-      courseList.mel           = false;
-      courseList.bns           = true;
-      courseList.ade           = false;
-      courseList.perth         = false;
-    }
+    window.localStorage.usersInterest = newVal;
   }
 
 });
