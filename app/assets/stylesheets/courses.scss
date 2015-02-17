@@ -88,7 +88,6 @@ $course-logo-size: 60px;
     margin: 0 5px 0;
     font-size: 1.5em;
     text-transform: uppercase;
-    cursor: pointer;
   }
 }
 
@@ -100,7 +99,7 @@ $course-logo-size: 60px;
   width: 100%;
   margin: 0 0 150px;
   @media screen and (min-width: 700px) {
-    margin-bottom: 300px;
+    margin-bottom: 250px;
   }
   .btn-block {
     float: right;
