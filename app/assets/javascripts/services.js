@@ -171,55 +171,41 @@ angular.module('CoderFactory')
 })
 
 .service('LocationService', function() {
-  // Callback function for asynchronous call to HTML5 geolocation
-  function UserLocation(position) {
-    NearestCity( position.coords.latitude, position.coords.longitude );
-  }
+
+  this.nearestLocation = NearestCity;
 
   // Convert Degress to Radians
   function Deg2Rad( deg ) {
-     return deg * Math.PI / 180;
+    return deg * Math.PI / 180;
   }
 
-  function PythagorasEquirectangular( lat1, lon1, lat2, lon2 )
-  {
-  lat1 = Deg2Rad(lat1);
-  lat2 = Deg2Rad(lat2);
-  lon1 = Deg2Rad(lon1);
-  lon2 = Deg2Rad(lon2);
-  var R = 6371; // km
-  var x = (lon2-lon1) * Math.cos((lat1+lat2)/2);
-  var y = (lat2-lat1);
-  var d = Math.sqrt(x*x + y*y) * R;
-  return d;
+  function PythagorasEquirectangular( lat1, lon1, lat2, lon2 ) {
+    lat1 = Deg2Rad(lat1);
+    lat2 = Deg2Rad(lat2);
+    lon1 = Deg2Rad(lon1);
+    lon2 = Deg2Rad(lon2);
+    var R = 6371; // km
+    var x = (lon2-lon1) * Math.cos((lat1+lat2)/2);
+    var y = (lat2-lat1);
+    var d = Math.sqrt(x*x + y*y) * R;
+    return d;
   }
 
-  var lat=20; // user's latitude
-  var lon=40; // user's longitude
+  function NearestCity(latitude, longitude, locations) {
+    var mindif=99999;
+    var closest;
 
-  var cities= [
-  ["Sydney",    10,  50],
-  ["Melbourne", 40,  60],
-  ["Brisbane",  25,  10],
-  ["Adelaide",   5,  80],
-  ["Perth",      5,  80]
-  ];
-
-  function NearestCity( latitude, longitude )
-  {
-      var mindif=99999;
-      var closest;
-
-      for (index = 0; index < cities.length; ++index) {
-          var dif =  PythagorasEquirectangular( lat, lon, cities[ index ][ 1 ], cities[ index ][ 2 ] );
-          if ( dif < mindif )
-          {
-              closest=index;
-              mindif = dif;
-          }
+    for (index = 0; index < locations.length; ++index) {
+      var dif =  PythagorasEquirectangular(latitude, longitude, locations[ index ][ 1 ], locations[ index ][ 2 ]);
+      if ( dif < mindif ) {
+        closest=index;
+        mindif = dif;
       }
+    }
 
-      // echo the nearest city
-      alert( cities[ closest ] );
+    // return the nearest location
+    var closestLocation = (locations[ closest ]);
+    console.log(closestLocation[0]);
+    return closestLocation[0];
   }
 });
