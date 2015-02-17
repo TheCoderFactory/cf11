@@ -31,7 +31,10 @@ angular.module('CoderFactory')
       img  : 'icon-flow-chart'
     }, {
       name : 'Front End Design',
-      img  : 'icon-html-code'
+      img  : 'icon-artboard'
+    }, {
+      name : 'Animation',
+      img  : 'icon-transform'
     }]
   },
   {
@@ -44,17 +47,14 @@ angular.module('CoderFactory')
     followingClass : '29 - 30th Feb (Weekend)',
     tags   : ['how to code'],
     skills : [{
-      name : 'Visual Design',
-      img  : 'icon-brush'
-    }, {
-      name : 'Design Fundamentals',
-      img  : 'icon-type'
-    }, {
-      name : 'User Experience',
-      img  : 'icon-flow-chart'
-    }, {
-      name : 'Front End Design',
+      name : 'Front End Dev',
       img  : 'icon-html-code'
+    }, {
+      name : 'Backend Dev',
+      img  : 'icon-console'
+    }, {
+      name : 'Lean Dev',
+      img  : 'icon-lean'
     }]
   }, {
     title           : 'Wordpress',
@@ -66,17 +66,14 @@ angular.module('CoderFactory')
     followingClass : '29 - 30th Feb (Weekend)',
     tags   : ['how to code'],
     skills : [{
-      name : 'Visual Design',
-      img  : 'icon-brush'
+      name : 'CMS',
+      img  : 'icon-cms'
     }, {
-      name : 'Design Fundamentals',
-      img  : 'icon-type'
-    }, {
-      name : 'User Experience',
-      img  : 'icon-flow-chart'
-    }, {
-      name : 'Front End Design',
+      name : 'Front End Dev',
       img  : 'icon-html-code'
+    }, {
+      name : 'Backend Dev',
+      img  : 'icon-console'
     }]
   }, {
     title           : 'Learn To Code For Highschoolers',
@@ -88,16 +85,13 @@ angular.module('CoderFactory')
     followingClass : '29 - 30th Feb (Weekend)',
     tags   : ['how to code'],
     skills : [{
-      name : 'Visual Design',
-      img  : 'icon-brush'
-    }, {
       name : 'Design Fundamentals',
       img  : 'icon-type'
     }, {
-      name : 'User Experience',
-      img  : 'icon-flow-chart'
+      name : 'Backend Dev',
+      img  : 'icon-console'
     }, {
-      name : 'Front End Design',
+      name : 'Front End Dev',
       img  : 'icon-html-code'
     }]
   }, {
@@ -110,16 +104,13 @@ angular.module('CoderFactory')
     followingClass : '29 - 30th Feb (Weekend)',
     tags   : ['how to code'],
     skills : [{
-      name : 'Visual Design',
-      img  : 'icon-brush'
-    }, {
-      name : 'Design Fundamentals',
-      img  : 'icon-type'
-    }, {
-      name : 'User Experience',
-      img  : 'icon-flow-chart'
+      name : 'Tech Theory',
+      img  : 'icon-book'
     }, {
       name : 'Front End Design',
+      img  : 'icon-artboard',
+    }, {
+      name : 'Front End Dev',
       img  : 'icon-html-code'
     }]
   }, {
@@ -132,8 +123,8 @@ angular.module('CoderFactory')
     followingClass : '29 - 30th Feb (Weekend)',
     tags   : ['how to code'],
     skills : [{
-      name : 'Visual Design',
-      img  : 'icon-brush'
+      name : 'Lean Dev',
+      img  : 'icon-lean'
     }, {
       name : 'Design Fundamentals',
       img  : 'icon-type'
@@ -141,8 +132,11 @@ angular.module('CoderFactory')
       name : 'User Experience',
       img  : 'icon-flow-chart'
     }, {
-      name : 'Front End Design',
+      name : 'Front End Dev',
       img  : 'icon-html-code'
+    }, {
+      name : 'Backend Dev',
+      img  : 'icon-console'
     }]
   }, {
     title           : 'Fast Track',
@@ -154,8 +148,8 @@ angular.module('CoderFactory')
     followingClass : '29 - 30th Feb (Weekend)',
     tags   : ['how to code'],
     skills : [{
-      name : 'Visual Design',
-      img  : 'icon-brush'
+      name : 'User Interface',
+      img  : 'icon-pasel'
     }, {
       name : 'Design Fundamentals',
       img  : 'icon-type'
@@ -163,8 +157,11 @@ angular.module('CoderFactory')
       name : 'User Experience',
       img  : 'icon-flow-chart'
     }, {
-      name : 'Front End Design',
+      name : 'Front End Dev',
       img  : 'icon-html-code'
+    }, {
+      name : 'Lean Dev',
+      img  : 'icon-lean'
     }]
   }];
 
@@ -205,7 +202,7 @@ angular.module('CoderFactory')
 
     // return the nearest location
     var closestLocation = (locations[ closest ]);
-    console.log(closestLocation[0]);
-    return closestLocation[0];
+    console.log('The closest location is ' + closestLocation[0]);
+    return closestLocation;
   }
 });

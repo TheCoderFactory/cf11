@@ -18,7 +18,9 @@ angular.module('CoderFactory', ['ngAnimate'])
       lng = position.coords.latitude;
       lat = position.coords.longitude;
 
-      window.localStorage.usersLocation = LocationService.nearestLocation(lng, lat, cities);
+      var usersCity = LocationService.nearestLocation(lng, lat, cities);
+
+      window.localStorage.usersLocation = usersCity[0];
 
     }, function(error) {
       console.log(error);
