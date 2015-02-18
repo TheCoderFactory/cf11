@@ -1,16 +1,8 @@
 GIT
-  remote: https://github.com/TheCoderFactory/stripe
-  revision: 672574492d99d0a82e63b69cf7c7130ce0dc40f0
+  remote: https://github.com/TheCoderFactory/CFShoppe
+  revision: 5ef5c790d0a255ec0d5eee7a876651f051bd44ac
   specs:
-    shoppe-stripe (1.2.1)
-      coffee-rails
-      shoppe
-      stripe (~> 1.8.7)
-
-PATH
-  remote: ../shoppe
-  specs:
-    shoppe (1.0.6)
+    shoppe (1.0.10)
       bcrypt (~> 3.1, >= 3.1.2)
       carrierwave
       cloudinary
@@ -28,6 +20,15 @@ PATH
       roo (>= 1.13.0)
       sass-rails (~> 5.0)
       uglifier (>= 2.2, < 3.0)
+
+GIT
+  remote: https://github.com/TheCoderFactory/stripe
+  revision: 672574492d99d0a82e63b69cf7c7130ce0dc40f0
+  specs:
+    shoppe-stripe (1.2.1)
+      coffee-rails
+      shoppe
+      stripe (~> 1.8.7)
 
 GEM
   remote: https://rubygems.org/
@@ -167,7 +168,7 @@ GEM
     netrc (0.10.2)
     nifty-dialog (1.1.1)
     nifty-key-value-store (1.0.2)
-    nifty-utils (1.0.8)
+    nifty-utils (1.0.9)
     nokogiri (1.6.5)
       mini_portile (~> 0.6.0)
     orm_adapter (0.5.0)
@@ -233,7 +234,7 @@ GEM
       rubyzip
       spreadsheet (> 0.6.4)
     ruby-ole (1.2.11.8)
-    rubyzip (1.1.6)
+    rubyzip (1.1.7)
     sass (3.4.9)
     sass-rails (5.0.1)
       railties (>= 4.0.0, < 5.0)
@@ -317,7 +318,7 @@ DEPENDENCIES
   rails_12factor
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
-  shoppe!
+  shoppe (~> 1.0.10)!
   shoppe-stripe!
   simple_form
   sitemap_generator

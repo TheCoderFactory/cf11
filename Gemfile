@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
-gem 'shoppe', path: '../shoppe'
+gem 'shoppe', '~> 1.0.10', git: 'https://github.com/TheCoderFactory/CFShoppe'
 gem 'shoppe-stripe', :require => 'shoppe/stripe', git: 'https://github.com/TheCoderFactory/stripe'
 gem 'devise'
 gem 'simple_form'

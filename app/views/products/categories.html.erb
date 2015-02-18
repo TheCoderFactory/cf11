@@ -1,20 +1,204 @@
-<% active_nav_item :catalogue %>
-<% @page_title = 'Catalogue' %>
 <% @course_header = true %>
-<div class="categories">
-  <ul>
-    <% for category in @product_categories %>
-      <li>
-        <!-- <div class="img" style="<%# category.image ? 'background-image:url(' + category.image.path + ' )' : 'background-color:#efefef' %>"></div> -->
-        <div class="space">
-          <h4>
-            <%= link_to category.name, products_path(category.permalink) %>
-          </h4>
-          <p>
-            <%= category.description %>
-          </p>
+  <div class="course-list-divider">
+    <h2 ng-class="{ 'divider-headline' : courseList.showWorkshopCourses }" ng-click="courseList.toggleWorkshops()">
+      Weekend Workshops
+    </h2>
+  </div>
+
+  <ul class="all-courses-list">
+
+    <li class="all-courses-item" ng-repeat="course in courseList.allCourses | filter:courseList.usersInterest | filter:courseList.usersLocation" ng-if="course.type === 'workshop'">
+      <header class="all-courses-header" ng-class="{ 'workshop-header-bg' : course.type === 'workshop', 'parttime-header-bg' : course.type === 'parttime', 'fulltime-header-bg' : course.type === 'fulltime' }">
+        <div class="main-row">
+          <h1 class="all-courses-headline">
+            {{ course.title }}
+          </h1><br>
+          <time class="all-courses-time" ng-click="courseList.showFollowingWeek = true" ng-hide="courseList.showFollowingWeek">Next Class:
+
+            <span ng-switch on="courseList.usersLocation">
+
+              <span ng-switch-when="Melbourne">{{ course.nextClass.Melbourne }}</span>
+              <span ng-switch-when="Sydney">{{ course.nextClass.Sydney }}</span>
+              <span ng-switch-when="Brisbane">{{ course.nextClass.Brisbane }}</span>
+              <span ng-switch-when="Perth">{{ course.nextClass.Perth }}</span>
+              <span ng-switch-when="Adelaide">{{ course.nextClass.Adelaide }}</span>
+
+              <img class="btn-sidearrow" src="<%=asset_path('btn-sidearrow.svg')%>" />
+
+            </span>
+
+          </time>
+
+          <time class="all-courses-time" ng-click="courseList.showFollowingWeek = false" ng-show="courseList.showFollowingWeek">Class After That:
+
+            <span ng-switch on="courseList.usersLocation">
+
+              <span ng-switch-when="Melbourne">{{ course.followingClass.Melbourne }}</span>
+              <span ng-switch-when="Sydney">{{ course.followingClass.Sydney }}</span>
+              <span ng-switch-when="Brisbane">{{ course.followingClass.Brisbane }}</span>
+              <span ng-switch-when="Perth">{{ course.followingClass.Perth }}</span>
+              <span ng-switch-when="Adelaide">{{ course.followingClass.Adelaide }}</span>
+
+              <img class="btn-sidearrow rotate-back" src="<%=asset_path('btn-sidearrow.svg')%>" />
+
+            </span>
+
+          </time>
+
+          <h3 class="all-courses-level" ng-class="{ 'workshop-level' : course.type === 'workshop', 'parttime-level' : course.type === 'parttime', 'fulltime-level' : course.type === 'fulltime' }">{{ course.level }}</h3>
         </div>
-      </li>
-    <% end %>
+      </header>
+      <div class="main-row">
+        <p class="all-courses-summary">
+          {{ course.info }}
+        </p>
+        <div class="all-courses-skills">
+          <div class="all-courses-skill" ng-repeat="skill in course.skills">
+            <img ng-src="/assets/{{ skill.img }}.svg"/>
+            <p>{{ skill.name }}</p>
+          </div>
+        </div>
+        <a class="btn-block btn-block-slime" href="">
+          More Info
+        </a>
+      </div>
+    </li>
+
   </ul>
-</div>
+
+  <div class="course-list-divider">
+    <h2 ng-class="{ 'divider-headline' : !courseList.showPtCourse }">
+      Part Time Courses
+    </h2>
+  </div>
+
+  <ul class="all-courses-list" ng-if="courseList.showPtCourses">
+
+    <li class="all-courses-item" ng-repeat="course in courseList.allCourses | filter:courseList.usersInterest | filter:courseList.usersLocation" ng-if="course.type === 'parttime'">
+      <header class="all-courses-header" ng-class="{ 'workshop-header-bg' : course.type === 'workshop', 'parttime-header-bg' : course.type === 'parttime', 'fulltime-header-bg' : course.type === 'fulltime' }">
+        <div class="main-row">
+          <h1 class="all-courses-headline">
+            {{ course.title }}
+          </h1><br>
+
+          <time class="all-courses-time" ng-click="courseList.showFollowingWeek = true" ng-hide="courseList.showFollowingWeek">Next Class:
+
+            <span ng-switch on="courseList.usersLocation">
+
+              <span ng-switch-when="Melbourne">{{ course.nextCourse.Melbourne }}</span>
+              <span ng-switch-when="Sydney">{{ course.nextCourse.Sydney }}</span>
+              <span ng-switch-when="Brisbane">{{ course.nextCourse.Brisbane }}</span>
+              <span ng-switch-when="Perth">{{ course.nextCourse.Perth }}</span>
+              <span ng-switch-when="Adelaide">{{ course.nextCourse.Adelaide }}</span>
+
+              <img class="btn-sidearrow" src="<%=asset_path('btn-sidearrow.svg')%>" />
+
+            </span>
+
+          </time>
+
+          <time class="all-courses-time" ng-click="courseList.showFollowingWeek = false" ng-show="courseList.showFollowingWeek">Class After That:
+
+            <span ng-switch on="courseList.usersLocation">
+
+              <span ng-switch-when="Melbourne">{{ course.followingClass.Melbourne }}</span>
+              <span ng-switch-when="Sydney">{{ course.followingClass.Sydney }}</span>
+              <span ng-switch-when="Brisbane">{{ course.followingClass.Brisbane }}</span>
+              <span ng-switch-when="Perth">{{ course.followingClass.Perth }}</span>
+              <span ng-switch-when="Adelaide">{{ course.followingClass.Adelaide }}</span>
+
+              <img class="btn-sidearrow rotate-back" src="<%=asset_path('btn-sidearrow.svg')%>" />
+
+            </span>
+
+          </time>
+
+          <h3 class="all-courses-level" ng-class="{ 'workshop-level' : course.type === 'workshop', 'parttime-level' : course.type === 'parttime', 'fulltime-level' : course.type === 'fulltime' }">{{ course.level }}</h3>
+        </div>
+      </header>
+      <div class="main-row">
+        <p class="all-courses-summary">
+          {{ course.info }}
+        </p>
+        <div class="all-courses-skills">
+          <div class="all-courses-skill" ng-repeat="skill in course.skills">
+            <img ng-src="/assets/{{ skill.img }}.svg"/>
+            <p>{{ skill.name }}</p>
+          </div>
+        </div>
+        <a class="btn-block btn-block-burtnsea" href="">
+          More Info
+        </a>
+      </div>
+    </li>
+
+  </ul>
+
+  <div class="course-list-divider">
+    <h2 ng-class="{ 'divider-headline' : !courseList.showPtCourse }">
+      Full Time Courses
+      <!-- <img src="<%= asset_path 'btn-play.svg' %>" /> -->
+    </h2>
+  </div>
+
+  <ul class="all-courses-list" ng-if="courseList.showFtCourses">
+
+    <li class="all-courses-item" ng-repeat="course in courseList.allCourses | filter:courseList.usersInterest | filter:courseList.usersLocation" ng-if="course.type === 'fulltime'">
+      <header class="all-courses-header" ng-class="{ 'workshop-header-bg' : course.type === 'workshop', 'parttime-header-bg' : course.type === 'parttime', 'fulltime-header-bg' : course.type === 'fulltime' }">
+        <div class="main-row">
+          <h1 class="all-courses-headline">
+            {{ course.title }}
+          </h1><br>
+
+          <time class="all-courses-time" ng-click="courseList.showFollowingWeek = true" ng-hide="courseList.showFollowingWeek">Next Class:
+
+            <span ng-switch on="courseList.usersLocation">
+
+              <span ng-switch-when="Melbourne">{{ course.nextCourse.Melbourne }}</span>
+              <span ng-switch-when="Sydney">{{ course.nextCourse.Sydney }}</span>
+              <span ng-switch-when="Brisbane">{{ course.nextCourse.Brisbane }}</span>
+              <span ng-switch-when="Perth">{{ course.nextCourse.Perth }}</span>
+              <span ng-switch-when="Adelaide">{{ course.nextCourse.Adelaide }}</span>
+
+              <img class="btn-sidearrow" src="<%=asset_path('btn-sidearrow.svg')%>" />
+
+            </span>
+
+          </time>
+
+          <time class="all-courses-time" ng-click="courseList.showFollowingWeek = false" ng-show="courseList.showFollowingWeek">Class After That:
+
+            <span ng-switch on="courseList.usersLocation">
+
+              <span ng-switch-when="Melbourne">{{ course.followingClass.Melbourne }}</span>
+              <span ng-switch-when="Sydney">{{ course.followingClass.Sydney }}</span>
+              <span ng-switch-when="Brisbane">{{ course.followingClass.Brisbane }}</span>
+              <span ng-switch-when="Perth">{{ course.followingClass.Perth }}</span>
+              <span ng-switch-when="Adelaide">{{ course.followingClass.Adelaide }}</span>
+
+              <img class="btn-sidearrow rotate-back" src="<%=asset_path('btn-sidearrow.svg')%>" />
+
+            </span>
+
+          </time>
+
+          <h3 class="all-courses-level" ng-class="{ 'workshop-level' : course.type === 'workshop', 'parttime-level' : course.type === 'parttime', 'fulltime-level' : course.type === 'fulltime' }">{{ course.level }}</h3>
+        </div>
+      </header>
+      <div class="main-row">
+        <p class="all-courses-summary">
+          {{ course.info }}
+        </p>
+        <div class="all-courses-skills">
+          <div class="all-courses-skill" ng-repeat="skill in course.skills">
+            <img ng-src="/assets/{{ skill.img }}.svg"/>
+            <p>{{ skill.name }}</p>
+          </div>
+        </div>
+        <a class="btn-block btn-block-darknight" href="">
+          More Info
+        </a>
+      </div>
+    </li>
+
+  </ul>

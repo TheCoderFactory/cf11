@@ -63,3 +63,12 @@
   font-size: $font-size-medium;
   font-weight: $font-weight-light;
 }
+
+.btn-dropdown {
+  transform: rotate(-90deg);
+  display: inline-block;
+}
+
+.btn-clear {
+  background: none;
+}

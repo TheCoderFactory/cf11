@@ -27,7 +27,13 @@
   font-weight: $font-weight-base;
   position: relative;
   bottom: 6px;
-  // -webkit-appearance: none;
+  -webkit-appearance: none;
+  padding-right: 50px;
+  background: image-url('icon-arrow.svg') no-repeat right;
+  @media screen and (max-width: 500px) {
+    background-size: 20px;
+    padding-right: 20px;
+  }
 }
 
 // .custom-select-arrow {

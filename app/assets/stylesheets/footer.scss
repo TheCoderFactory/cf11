@@ -4,15 +4,14 @@
 .main-footer {
   color: $midnight-light;
   background: $midnight;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .main-footer-wrapper {
   display: flex;
-  flex-direction: column-reverse;
-  @media screen and (min-width: 800px) {
-    flex-direction: row;
-  }
-  align-items: center;
+  justify-content: center;
   padding: 75px 30px;
   @media screen and (min-width: 800px) {
     max-width: 70%;
@@ -88,17 +87,17 @@
   .twitter a {
     background-image: image-url('social/twitter.svg');
   }
-  .pinterest a {
-    background-image: image-url('social/pinterest.svg');
-  }
   .linkedin a {
     background-image: image-url('social/linkedin.svg');
   }
   .youtube a {
     background-image: image-url('social/youtube.svg');
   }
-  .vimeo a {
-    background-image: image-url('social/vimeo.svg');
+  .mailbox a {
+    background-image: image-url('social/mailbox.svg');
+  }
+  .private a {
+    background-image: image-url('social/private-policy.svg');
   }
 }
 

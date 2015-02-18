@@ -86,14 +86,20 @@ $course-logo-size: 60px;
     display: inline-block;
     line-height: 100px;
     margin: 0 5px 0;
+    font-size: 1.5em;
+    text-transform: uppercase;
   }
 }
+
+// .divider-headline {
+//   text-decoration: underline;
+// }
 
 .all-courses-item {
   width: 100%;
   margin: 0 0 150px;
   @media screen and (min-width: 700px) {
-    margin-bottom: 300px;
+    margin-bottom: 250px;
   }
   .btn-block {
     float: right;
@@ -138,8 +144,10 @@ $course-logo-size: 60px;
   font-size: $font-size-xlarge;
   font-family: $heading-font;
   opacity: 0.9;
-  transition: 0.5 ease-in;
   cursor: pointer;
+  &:hover {
+    opacity: 1;
+  }
 }
 
 .all-courses-level {
@@ -181,6 +189,17 @@ $course-logo-size: 60px;
     transition: .3s ease-in;
   }
 }
+
+.btn-sidearrow {
+  position: relative;
+  top: 5px;
+  left: 10px;
+}
+
+.rotate-back {
+	transform: rotate(180deg);
+}
+
 
 
 
