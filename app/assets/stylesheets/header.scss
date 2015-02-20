@@ -37,11 +37,21 @@
 .call-to-action-wrapper {
   width: 90%;
   height: 100%;
-  margin: 20% auto;
+  margin: 5% auto;
 
   @media screen and (min-width: 750px) {
     margin: 9% auto;
 
+  }
+
+  a {
+    margin: 30px auto;
+    display: block;
+    width: 200px;
+    z-index: 200;
+  }
+  .btn-block-dirtygold {
+    background: darken($dirty-gold, 2);
   }
 
 }
@@ -49,6 +59,7 @@
 .call-to-action-headline {
   text-transform: uppercase;
   font-size: 9vw;
+  text-align: center;
   @media screen and (min-width: 950px) {
     font-size: 90px;
   }
@@ -60,8 +71,10 @@
   font-weight: $font-weight-light;
   line-height: $line-height-base;
   margin: 2% 0 0;
-  width: 66%;
-  @media screen and (max-width: 550px) {
-    display: none;
+  text-align: center;
+  font-size: 1.2em;
+  @media screen and (min-width: 500px) {
+    font-size: $font-size-large;
   }
+  opacity: 0.9;
 }
